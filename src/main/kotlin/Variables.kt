@@ -1,13 +1,17 @@
 package com.jay.favour
 
 import org.powbot.api.rt4.Npc
+import org.powbot.api.rt4.Skills
+import org.powbot.api.rt4.walking.model.Skill
 
 object Variables {
     var favour = 0
     var favourPercent = 0.0f
     var stopAtPctHosidius = 100
     var stopAtPctPiscarilius = 100
+    var stopAtPctLovakengj = 100
     var stopAfterMinutes = 0
+    var playerName = ""
     var favourType = "Hosidius"
     var veosTileMatrix = Constants.TILE_VEOS.matrix()
 
@@ -21,4 +25,10 @@ object Variables {
     // Piscarilius favour - Crane repair
     var plankType = "Plank"
     var timeSinceLastCraneRepairAnim: Long = 0
+
+    // Lovakengj favour - Volanic sulphur mining
+    var miningXp = Skills.experience(   Skill.Mining)
+    var timeSinceLastMiningXp: Long = 0
+    var inventoryFull = false
+    var safeSpotSpider = Npc.Nil
 }

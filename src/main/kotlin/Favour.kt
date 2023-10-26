@@ -5,7 +5,9 @@ import com.jay.favour.branch.IsLoggedIn
 import org.powbot.api.Color
 import org.powbot.api.event.PlayerAnimationChangedEvent
 import org.powbot.api.rt4.Players
+import org.powbot.api.rt4.Skills
 import org.powbot.api.rt4.Varpbits
+import org.powbot.api.rt4.walking.model.Skill
 import org.powbot.api.script.*
 import org.powbot.api.script.paint.PaintBuilder
 import org.powbot.api.script.tree.TreeComponent
@@ -36,8 +38,12 @@ import org.powbot.mobile.service.ScriptUploader
             optionType = OptionType.INTEGER, defaultValue = "100"
         ),
         ScriptConfiguration(
+            "stopAtPctLovakengj", "Stop at % lovakengj favour:",
+            optionType = OptionType.INTEGER, defaultValue = "100"
+        ),
+        ScriptConfiguration(
             "plankType", "Planks to use for repairing cranes:",
-            optionType = OptionType.BOOLEAN, defaultValue = "Plank",
+            optionType = OptionType.STRING, defaultValue = "Plank",
             allowedValues = arrayOf("Plank", "Oak plank", "Teak plank", "Mahogany plank")
         ),
         ScriptConfiguration(
@@ -48,8 +54,6 @@ import org.powbot.mobile.service.ScriptUploader
 )
 
 class Favour : TreeScript() {
-    private var playerName = ""
-
     @ValueChanged("stopAtPctHosidius")
     fun stopAtPctHosidiusChanged(newValue: Int) {
         Variables.stopAtPctHosidius = if (newValue in 1..99)
@@ -59,6 +63,12 @@ class Favour : TreeScript() {
     @ValueChanged("stopAtPctPiscarilius")
     fun stopAtPctPiscariliusChanged(newValue: Int) {
         Variables.stopAtPctPiscarilius = if (newValue in 1..99)
+            newValue else 100
+    }
+
+    @ValueChanged("stopAtPctLovakengj")
+    fun stopAtPctLovakengjChanged(newValue: Int) {
+        Variables.stopAtPctLovakengj = if (newValue in 1..99)
             newValue else 100
     }
 
@@ -78,21 +88,38 @@ class Favour : TreeScript() {
     }
 
     override fun onStart() {
-        playerName = Players.local().name
-        if (playerName.isBlank()) {
+        Variables.playerName = Players.local().name
+        if (Variables.playerName.isBlank()) {
             severe("Failed to grab our name.")
             ScriptManager.stop()
             return
         }
 
+        val piscFavour = Varpbits.value(4899, false)
+        val lovaFavour = Varpbits.value(4898, false)
         if (Varpbits.value(4895, false) >= (Variables.stopAtPctHosidius * 10)) {
-            if (Varpbits.value(4899, false) >= (Variables.stopAtPctPiscarilius * 10)) {
-                severe("Script stopping due to favour goals reached.")
-                ScriptManager.stop()
-                return
+            if (piscFavour >= (Variables.stopAtPctPiscarilius * 10)) {
+                if (lovaFavour >= (Variables.stopAtPctLovakengj * 10)) {
+                    severe("Script stopping due to favour goals reached.")
+                    ScriptManager.stop()
+                    return
+                }
+
+                Variables.favourType = "Lovakengj"
             }
 
             Variables.favourType = "Piscarilius"
+        }
+
+        if (Variables.stopAtPctPiscarilius > 0 && piscFavour < 300 && Skills.realLevel(Skill.Crafting) < 30) {
+            severe("Your crafting level is too low for repairing cranes.")
+            return
+        }
+
+        if (Variables.stopAtPctLovakengj> 0 && lovaFavour < 300 && (Skills.realLevel(Skill.Mining) < 42
+                    || Skills.realLevel(Skill.Magic) < 3)) {
+            severe("Your mining or magic level is too low for mining volcanic sulphur.")
+            return
         }
 
         val p = PaintBuilder.newBuilder()
@@ -114,12 +141,12 @@ class Favour : TreeScript() {
 
     @Subscribe
     private fun playerAnimation(animationEvent: PlayerAnimationChangedEvent) {
-        if (animationEvent.player.name == playerName && animationEvent.animation == 7199)
+        if (animationEvent.player.name == Variables.playerName && animationEvent.animation == 7199)
             Variables.timeSinceLastCraneRepairAnim = System.currentTimeMillis() + 10000
     }
 }
 
 fun main(args: Array<String>)
 {
-    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:54210", true, false)
+    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:51502", true, false)
 }

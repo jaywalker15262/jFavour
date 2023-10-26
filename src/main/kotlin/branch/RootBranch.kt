@@ -35,18 +35,22 @@ class IsEnding(script: Favour) : Branch<Favour>(script, "Ending script?") {
             }
         }
 
-        // Hosidius
-        if (Variables.favourType == "Hosidius") {
+        if (Variables.favourType == "Hosidius") {           // Hosidius
             Variables.favour = Varpbits.value(4895, false)
             Variables.favourPercent = Variables.favour.toFloat() / 10.0f
             if (Variables.favourPercent.toInt() >= Variables.stopAtPctHosidius)
                 Variables.favourType = "Piscarilius"
         }
-        // Piscarilius
-        else if (Variables.favourType == "Piscarilius") {
+        else if (Variables.favourType == "Piscarilius") {   // Piscarilius
             Variables.favour = Varpbits.value(4899, false)
             Variables.favourPercent = Variables.favour.toFloat() / 10.0f
             if (Variables.favourPercent.toInt() >= Variables.stopAtPctPiscarilius)
+                Variables.favourType = "Lovakengj"
+        }
+        else if (Variables.favourType == "Lovakengj") {     // Lovakengj
+            Variables.favour = Varpbits.value(4898, false)
+            Variables.favourPercent = Variables.favour.toFloat() / 10.0f
+            if (Variables.favourPercent.toInt() >= Variables.stopAtPctLovakengj)
                 Variables.favourType = "None"
         }
 

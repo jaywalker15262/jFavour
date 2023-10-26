@@ -13,27 +13,14 @@ class TravelToKourend(script: Favour) : Leaf<Favour>(script, "Traveling To Koure
         if (Game.floor() != 1) {
             if (Players.local().distanceTo(Constants.TILE_VEOS).toInt() > 54 &&
                 Players.local().distanceTo(Constants.TILE_DRAYNOR_VILLAGE).toInt() > 6) {
-                val skillsNecklace = Inventory.stream().nameContains("Amulet of glory(").first()
-                if (!skillsNecklace.valid()) {
+                val glory = Equipment.stream().nameContains("Amulet of glory(").first()
+                if (!glory.valid()) {
                     script.info("We were unable to find a charged amulet of glory in our inventory.")
                     return
                 }
 
-                if (!skillsNecklace.interact("Rub")) {
-                    script.info("Failed to rub the amulet.")
-                    return
-                }
-
-                if (!Condition.wait({ Chat.chatting() },
-                        Random.nextGaussian(270, 450, 300, 30.0), 17)) {
-                    script.info("Failed to find that we are chatting after rubbing the amulet.")
-                    return
-                }
-
-                if (!Chat.completeChat("Draynor Village")
-                    || !Condition.wait({ !Chat.chatting() },
-                        Random.nextGaussian(270, 450, 300, 30.0), 17)) {
-                    script.info("Failed to complete the conversation after rubbing the amulet.")
+                if (!glory.interact("Draynor Village")) {
+                    script.info("Failed to use the amulet of glory.")
                     return
                 }
 
@@ -112,6 +99,8 @@ class TravelToKourend(script: Favour) : Leaf<Favour>(script, "Traveling To Koure
                     script.info("Failed to find that we arrived at port piscarilius.")
                     return
                 }
+
+                Condition.sleep(2500)   // Sleep a bit before attempting to walk across the gangplank.
             }
         }
         else {

@@ -6,6 +6,7 @@ import com.jay.favour.Variables
 import com.jay.favour.leaf.traveling.TravelToCrane
 import com.jay.favour.leaf.traveling.TravelToKourend
 import com.jay.favour.leaf.traveling.TravelToPlough
+import com.jay.favour.leaf.traveling.TravelToSulphurMine
 import org.powbot.api.rt4.Game
 import org.powbot.api.rt4.Players
 import org.powbot.api.script.tree.Branch
@@ -16,10 +17,11 @@ class AtFavourArea(script: Favour) : Branch<Favour>(script, "Inside the favour a
     override val failedComponent: TreeComponent<Favour> = IsGrandExchangeOpened(script)
 
     override fun validate(): Boolean {
-        if (Variables.favourType == "Hosidius")
-            return Constants.AREA_PLOUGHING.contains(Players.local())
-
-        return Constants.AREA_CRANES_BIG.contains(Players.local())
+        return when (Variables.favourType) {
+            "Hosidius" -> Constants.AREA_PLOUGHING.contains(Players.local())
+            "Piscarilius" -> Constants.AREA_CRANES_BIG.contains(Players.local())
+            else -> Constants.AREA_SULPHUR_MINE.contains(Players.local())
+        }
     }
 }
 
@@ -28,7 +30,7 @@ class TravelCheck(script: Favour) : Branch<Favour>(script, "Travel to kourend?")
     override val failedComponent: TreeComponent<Favour> = TravelToPloughAreaCheck(script)
 
     override fun validate(): Boolean {
-        return Game.floor() == 1 || Players.local().distanceTo(Constants.TILE_PORT_PISCARILIUS).toInt() > 200
+        return Game.floor() == 1 || Players.local().distanceTo(Constants.TILE_PORT_PISCARILIUS).toInt() > 500
                 || Constants.AREA_PLOUGHING.contains(Players.local())
                 || Constants.AREA_CRANES_BIG.contains(Players.local())
     }
@@ -36,12 +38,18 @@ class TravelCheck(script: Favour) : Branch<Favour>(script, "Travel to kourend?")
 
 class TravelToPloughAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to ploughing area?") {
     override val successComponent: TreeComponent<Favour> = TravelToPlough(script)
-    override val failedComponent: TreeComponent<Favour> = TravelToCrane(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToCraneAreaCheck(script)
 
     override fun validate(): Boolean {
-        if (Variables.favourType == "Hosidius")
-            return Constants.AREA_PLOUGHING.contains(Players.local())
+        return Variables.favourType == "Hosidius"
+    }
+}
 
-        return Constants.AREA_CRANES_BIG.contains(Players.local())
+class TravelToCraneAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to crane repairing area?") {
+    override val successComponent: TreeComponent<Favour> = TravelToCrane(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToSulphurMine(script)
+
+    override fun validate(): Boolean {
+        return Variables.favourType == "Piscarilius"
     }
 }

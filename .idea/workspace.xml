@@ -4,41 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/branch/BankBranches.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/branch/MovementBranches.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/branch/RootBranch.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/Chill.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/EndScript.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/LogIn.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/banking/CloseBank.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/hosidius/Plough.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/piscarilius/GrabPlanksAndNails.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/piscarilius/RepairCrane.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/piscarilius/TradeLeenz.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/grandexchange/CloseGrandExchange.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/merchanting/CloseStore.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToCrane.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToKourend.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToPlough.kt" afterDir="false" />
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="First commit.">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/AggroSpider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/DropSulphur.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/MineVolcanicSulphur.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/SetupSafespot.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToSulphurMine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/MovementBranches.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/MovementBranches.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/RootBranch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/RootBranch.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/Chill.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/Chill.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToKourend.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToKourend.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +88,17 @@
       <option name="presentableId" value="Default" />
       <updated>1697731116697</updated>
     </task>
+    <task id="LOCAL−00001" summary="First commit.">
+      <created>1698013502276</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1698013502278</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit." />
   </component>
 </project>
