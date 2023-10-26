@@ -9,7 +9,7 @@ import org.powbot.api.script.tree.Leaf
 class DropSulphur(script: Favour) : Leaf<Favour>(script, "Dropping") {
     override fun execute() {
         val volcanicSulphur = Inventory.stream().name("Volcanic sulphur", "Uncut sapphire", "Uncut sapphire",
-            "Uncut emeral", "Uncut ruby", "Uncut diamond", "Clue geode (beginner)", "Clue geode (easy)").toList()
+            "Uncut emerald", "Uncut ruby", "Uncut diamond", "Clue geode (beginner)", "Clue geode (easy)").toList()
         if (volcanicSulphur.isEmpty())
             return
 
