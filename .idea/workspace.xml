@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="First commit.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/AggroSpider.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/DropSulphur.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/MineVolcanicSulphur.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/lovakengj/SetupSafespot.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToSulphurMine.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/MovementBranches.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/MovementBranches.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/RootBranch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/RootBranch.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/Chill.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/Chill.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToKourend.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/traveling/TravelToKourend.kt" afterDir="false" />
-    </list>
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Volcanic sulphur support." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,11 +79,18 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1698013502278</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Volcanic sulphur support.">
+      <created>1698334515499</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1698334515499</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit." />
+    <MESSAGE value="Volcanic sulphur support." />
+    <option name="LAST_COMMIT_MESSAGE" value="Volcanic sulphur support." />
   </component>
 </project>
