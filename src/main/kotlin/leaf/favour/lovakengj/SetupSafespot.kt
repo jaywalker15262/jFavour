@@ -9,7 +9,7 @@ import org.powbot.api.script.tree.Leaf
 
 class SetupSafespot(script: Favour) : Leaf<Favour>(script, "Setting Up Safespot") {
     override fun execute() {
-        if (Players.local().tile() != Constants.TILE_SAFESPOT_SETUP) {
+        if (Players.local().distanceTo(Constants.TILE_SAFESPOT_SETUP).toInt() > 1) {
             val safeSpotSetupMatrix = Constants.TILE_SAFESPOT_SETUP.matrix()
             if (!safeSpotSetupMatrix.valid())
                 return
