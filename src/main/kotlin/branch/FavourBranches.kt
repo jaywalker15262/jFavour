@@ -13,6 +13,9 @@ import com.jay.favour.leaf.favour.lovakengj.SetupSafespot
 import com.jay.favour.leaf.favour.piscarilius.GrabPlanksAndNails
 import com.jay.favour.leaf.favour.piscarilius.RepairCrane
 import com.jay.favour.leaf.favour.piscarilius.TradeLeenz
+import com.jay.favour.leaf.favour.shayzien.GrabMedPacks
+import com.jay.favour.leaf.favour.shayzien.HealSoldier
+import com.jay.favour.leaf.favour.shayzien.MoveToNextCamp
 import com.jay.favour.leaf.merchanting.CloseStore
 import org.powbot.api.rt4.Inventory
 import org.powbot.api.rt4.Players
@@ -33,16 +36,25 @@ class PloughCheck(script: Favour) : Branch<Favour>(script, "Plough?") {
 
 class RepairCraneCheck(script: Favour) : Branch<Favour>(script, "Repair crane?") {
     override val successComponent: TreeComponent<Favour> = PlankAndNailCheck(script)
-    override val failedComponent: TreeComponent<Favour> = SafespotCheck(script)
+    override val failedComponent: TreeComponent<Favour> = MineVolcanicSulphurCheck(script)
 
     override fun validate(): Boolean {
         return Variables.favourType == "Piscarilius"
     }
 }
 
+class MineVolcanicSulphurCheck(script: Favour) : Branch<Favour>(script, "Mine volcanic sulphur?") {
+    override val successComponent: TreeComponent<Favour> = SafespotCheck(script)
+    override val failedComponent: TreeComponent<Favour> = MoveToCampCheck(script)
+
+    override fun validate(): Boolean {
+        return Variables.favourType == "Lovakengj"
+    }
+}
+
 class SafespotCheck(script: Favour) : Branch<Favour>(script, "Setup safespot?") {
     override val successComponent: TreeComponent<Favour> = ToAggroSpider(script)
-    override val failedComponent: TreeComponent<Favour> = MineVolcanicSulphurCheck(script)
+    override val failedComponent: TreeComponent<Favour> = ToDropSulphur(script)
 
     override fun validate(): Boolean {
         return Constants.TILE_VOLCANIC_SULPHUR_SAFESPOT != Players.local().tile() || !Variables.safeSpotSpider.valid()
@@ -59,13 +71,34 @@ class ToAggroSpider(script: Favour) : Branch<Favour>(script, "Aggro spider?") {
     }
 }
 
-class MineVolcanicSulphurCheck(script: Favour) : Branch<Favour>(script, "Mine volcanic sulphur?") {
+class ToDropSulphur(script: Favour) : Branch<Favour>(script, "Drop sulphur?") {
     override val successComponent: TreeComponent<Favour> = MineVolcanicSulphur(script)
     override val failedComponent: TreeComponent<Favour> = DropCheck(script)
 
     override fun validate(): Boolean {
         Variables.inventoryFull = Inventory.isFull()
         return !Variables.inventoryFull && System.currentTimeMillis() > Variables.timeSinceLastMiningXp
+    }
+}
+
+class MoveToCampCheck(script: Favour) : Branch<Favour>(script, "Move to the next camp?") {
+    override val successComponent: TreeComponent<Favour> = MoveToNextCamp(script)
+    override val failedComponent: TreeComponent<Favour> = MedpackCheck(script)
+
+    override fun validate(): Boolean {
+        return Variables.moveToNextCamp
+    }
+}
+
+class MedpackCheck(script: Favour) : Branch<Favour>(script, "Grab medpacks?") {
+    override val successComponent: TreeComponent<Favour> = GrabMedPacks(script)
+    override val failedComponent: TreeComponent<Favour> = HealSoldier(script)
+
+    override fun validate(): Boolean {
+        if (Inventory.isEmpty())    // Failsafe
+            Variables.grabMedPacks = true
+
+        return Variables.grabMedPacks
     }
 }
 

@@ -20,7 +20,8 @@ class AtFavourArea(script: Favour) : Branch<Favour>(script, "Inside the favour a
         return when (Variables.favourType) {
             "Hosidius" -> Constants.AREA_PLOUGHING.contains(Players.local())
             "Piscarilius" -> Constants.AREA_CRANES_BIG.contains(Players.local())
-            else -> Constants.AREA_SULPHUR_MINE.contains(Players.local())
+            "Lovakengj" -> Constants.AREA_SULPHUR_MINE.contains(Players.local())
+            else -> Constants.AREA_SHAYZIEN_CAMP.contains(Players.local())
         }
     }
 }

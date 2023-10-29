@@ -142,6 +142,7 @@ object Constants {
     val TILE_SAFESPOT_SETUP = Tile(1426, 3871, 0)
     val TILE_SULPHUR_MINE = Tile(1428, 3869, 0)
     val TILE_VOLCANIC_SULPHUR_SAFESPOT = Tile(1423, 3871, 0)
+    val TILE_LOVAKENGJ_BANK = Tile(1437, 3834, 0)
     val AREA_SULPHUR_MINE = Area(Tile(1421, 3876, 0), Tile(1437, 3868, 0))
     val PATH_SULPHUR_MINE = TilePath(arrayOf(Tile(1824, 3691, 0), Tile(1824, 3690, 0),
         Tile(1823, 3690, 0), Tile(1822, 3690, 0), Tile(1821, 3690, 0),
@@ -310,4 +311,35 @@ object Constants {
         Tile(1434, 3863, 0), Tile(1433, 3864, 0), Tile(1432, 3864, 0),
         Tile(1431, 3865, 0), Tile(1430, 3866, 0), Tile(1429, 3867, 0),
         Tile(1428, 3868, 0), Tile(1428, 3869, 0)))
+    val PATH_LOVAKENGJ_BANK = TilePath(arrayOf(Tile(1423, 3871, 0), Tile(1424, 3870, 0),
+        Tile(1424, 3869, 0), Tile(1425, 3868, 0), Tile(1426, 3867, 0),
+        Tile(1427, 3866, 0), Tile(1427, 3865, 0), Tile(1427, 3864, 0),
+        Tile(1428, 3863, 0), Tile(1428, 3862, 0), Tile(1428, 3861, 0),
+        Tile(1428, 3860, 0), Tile(1427, 3859, 0), Tile(1427, 3858, 0),
+        Tile(1427, 3857, 0), Tile(1427, 3856, 0), Tile(1427, 3855, 0),
+        Tile(1427, 3854, 0), Tile(1427, 3853, 0), Tile(1427, 3852, 0),
+        Tile(1427, 3851, 0), Tile(1427, 3850, 0), Tile(1427, 3849, 0),
+        Tile(1427, 3848, 0), Tile(1428, 3847, 0), Tile(1429, 3846, 0),
+        Tile(1430, 3845, 0), Tile(1430, 3844, 0), Tile(1431, 3843, 0),
+        Tile(1431, 3842, 0), Tile(1432, 3841, 0), Tile(1433, 3840, 0),
+        Tile(1433, 3839, 0), Tile(1434, 3838, 0), Tile(1435, 3837, 0),
+        Tile(1436, 3837, 0), Tile(1437, 3837, 0), Tile(1437, 3836, 0),
+        Tile(1437, 3835, 0), Tile(1437, 3834, 0)))
+
+    // Shayzien favour -Mending wounded soldiers
+    val WOUNDED_SOLDIER_IDS = arrayOf(6848, 6838, 6830, 6852, 6844, 6854, 6846, 6832, 6840, 6836, 6828, 6856, 6826,
+        6834, 6842, 6850)
+    val TILE_MEDPACK_BOX = Tile(1521, 3615, 0)
+    val CAMP_TILES = arrayOf(Tile(1526, 3617, 0), Tile(1524, 3621, 0),
+        Tile(1530, 3629, 0), Tile(1522, 3631, 0), Tile(1516, 3622, 0),
+        Tile(1510, 3622, 0), Tile(1510, 3616, 0), Tile(1516, 3616, 0),
+        Tile(1522, 3615, 0))
+    val WOUNDED_SOLDIER_TILES = arrayOf(Tile(1522, 3614, 0), Tile(1528, 3617, 0),
+        Tile(1528, 3618, 0), Tile(1525, 3623, 0), Tile(1524, 3623, 0),
+        Tile(1532, 3629, 0), Tile(1532, 3630, 0), Tile(1521, 3632, 0),
+        Tile(1521, 3631, 0), Tile(1517, 3624, 0), Tile(1516, 3624, 0),
+        Tile(1510, 3624, 0), Tile(1510, 3615, 0), Tile(1511, 3615, 0),
+        Tile(1516, 3615, 0), Tile(1517, 3615, 0))
+    val AREA_SHAYZIEN_CAMP = Area(Tile(1509, 3632, 0), Tile(1534, 3613, 0))
+
 }

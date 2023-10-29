@@ -16,7 +16,8 @@ class SetupSafespot(script: Favour) : Leaf<Favour>(script, "Setting Up Safespot"
 
             if (!safeSpotSetupMatrix.interact("Walk here")
                 || !Condition.wait({ Players.local().inMotion() }, 50, 60)
-                || !Condition.wait({ !Variables.safeSpotSpider.inMotion() }, 50, 100)) {
+                || !Condition.wait({ Variables.safeSpotSpider
+                    .distanceTo(Players.local()).toInt() < 2 }, 50, 100)) {
                 script.info("Failed to attempt to walk to the safespot setup tile.")
                 return
             }
