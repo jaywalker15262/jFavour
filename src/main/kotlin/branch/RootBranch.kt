@@ -65,6 +65,12 @@ class IsEnding(script: Favour) : Branch<Favour>(script, "Ending script?") {
             Variables.favour = Varpbits.value(4894, false)
             Variables.favourPercent = Variables.favour.toFloat() / 10.0f
             if (Variables.favourPercent.toInt() >= Variables.stopAtPctShayzien)
+                Variables.favourType = "Arceuus"
+        }
+        else if (Variables.favourType == "Arceuus") {   // Arceuus
+            Variables.favour = Varpbits.value(4896, false)
+            Variables.favourPercent = Variables.favour.toFloat() / 10.0f
+            if (Variables.favourPercent.toInt() >= Variables.stopAtPctArceuus)
                 Variables.favourType = "None"
         }
 

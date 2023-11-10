@@ -10,7 +10,7 @@ import org.powbot.api.rt4.*
 import org.powbot.api.script.tree.Leaf
 import org.powbot.mobile.script.ScriptManager
 
-class Plough (script: Favour) : Leaf<Favour>(script, "Ploughing") {
+class Plough(script: Favour) : Leaf<Favour>(script, "Ploughing") {
     override fun execute() {
         if (!plough.valid()) {
             val players = Players.stream().notLocalPlayer().within(Constants.AREA_PLOUGHING)

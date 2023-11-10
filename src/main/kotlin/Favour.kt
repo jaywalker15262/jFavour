@@ -47,6 +47,10 @@ import org.powbot.mobile.service.ScriptUploader
             optionType = OptionType.INTEGER, defaultValue = "100"
         ),
         ScriptConfiguration(
+            "stopAtPctArceuus", "Stop at % arceuus favour:",
+            optionType = OptionType.INTEGER, defaultValue = "100"
+        ),
+        ScriptConfiguration(
             "plankType", "Planks to use for repairing cranes:",
             optionType = OptionType.STRING, defaultValue = "Plank",
             allowedValues = arrayOf("Plank", "Oak plank", "Teak plank", "Mahogany plank")
@@ -83,6 +87,12 @@ class Favour : TreeScript() {
             newValue else 100
     }
 
+    @ValueChanged("stopAtPctArceuus")
+    fun stopAtPctArceuusChanged(newValue: Int) {
+        Variables.stopAtPctArceuus = if (newValue in 1..99)
+            newValue else 100
+    }
+
     @ValueChanged("stopAfterMinutes")
     fun stopAfterMinutesChanged(newValue: Int) {
         Variables.stopAfterMinutes = if (newValue > 0)
@@ -109,24 +119,28 @@ class Favour : TreeScript() {
         val piscFavour = Varpbits.value(4899, false)
         val lovaFavour = Varpbits.value(4898, false)
         val shayzienFavour = Varpbits.value(4894, false)
+        val arceuusFavour = Varpbits.value(4896, false)
         if (Varpbits.value(4895, false) >= (Variables.stopAtPctHosidius * 10)) {
             if (piscFavour >= (Variables.stopAtPctPiscarilius * 10)) {
                 if (lovaFavour >= (Variables.stopAtPctLovakengj * 10)) {
                     if (shayzienFavour >= (Variables.stopAtPctShayzien * 10)) {
-                        severe("Script stopping due to favour goals reached.")
-                        ScriptManager.stop()
-                        return
+                        if (arceuusFavour >= (Variables.stopAtPctArceuus * 10)) {
+                            severe("Script stopping due to favour goals reached.")
+                            ScriptManager.stop()
+                            return
+                        }
+
+                        Variables.favourType = "Arceuus"
                     }
-
-                    Variables.favourType = "Shayzien"
-                    if (Inventory.isFull())
-                        Variables.grabMedPacks = false
+                    else {
+                        Variables.favourType = "Shayzien"
+                        if (Inventory.isFull())
+                            Variables.grabMedPacks = false
+                    }
                 }
-
-                Variables.favourType = "Lovakengj"
+                else Variables.favourType = "Lovakengj"
             }
-
-            Variables.favourType = "Piscarilius"
+            else Variables.favourType = "Piscarilius"
         }
 
         if (Variables.stopAtPctPiscarilius > 0 && piscFavour < 300 && Skills.realLevel(Skill.Crafting) < 30) {
@@ -166,5 +180,5 @@ class Favour : TreeScript() {
 
 fun main(args: Array<String>)
 {
-    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:51502", true, false)
+    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:64363", true, false)
 }

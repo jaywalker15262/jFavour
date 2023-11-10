@@ -18,7 +18,7 @@ class MoveToNextCamp(script: Favour) : Leaf<Favour>(script, "Moving To Next Camp
         if (Players.local().distanceTo(Constants.CAMP_TILES[Variables.currCamp]) > 2
             && (!Movement.step(Constants.CAMP_TILES[Variables.currCamp])
                     || !Condition.wait({ Players.local().inMotion() }, 50, 60)
-                    || !Condition.wait({ !Players.local().inMotion() }, 50, 180)
+                    || !Condition.wait({ !Players.local().inMotion() }, 50, 300)
                     || Players.local().distanceTo(Constants.CAMP_TILES[Variables.currCamp]) > 2)) {
             script.info("Failed to get to the next camp.")
             return

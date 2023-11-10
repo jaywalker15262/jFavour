@@ -17,11 +17,13 @@ class AtFavourArea(script: Favour) : Branch<Favour>(script, "Inside the favour a
     override val failedComponent: TreeComponent<Favour> = IsGrandExchangeOpened(script)
 
     override fun validate(): Boolean {
+        val playerTile = Players.local().tile()
         return when (Variables.favourType) {
-            "Hosidius" -> Constants.AREA_PLOUGHING.contains(Players.local())
-            "Piscarilius" -> Constants.AREA_CRANES_BIG.contains(Players.local())
-            "Lovakengj" -> Constants.AREA_SULPHUR_MINE.contains(Players.local())
-            else -> Constants.AREA_SHAYZIEN_CAMP.contains(Players.local())
+            "Hosidius" -> Constants.AREA_PLOUGHING.contains(playerTile)
+            "Piscarilius" -> Constants.AREA_CRANES_BIG.contains(playerTile)
+            "Lovakengj" -> Constants.AREA_SULPHUR_MINE.contains(playerTile)
+            "Shayzien" -> Constants.AREA_SHAYZIEN_CAMP.contains(playerTile)
+            else -> Constants.AREA_ARCEUUS_LIBRARY.contains(playerTile)
         }
     }
 }

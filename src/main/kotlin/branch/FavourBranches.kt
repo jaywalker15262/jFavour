@@ -5,6 +5,9 @@ import com.jay.favour.Favour
 import com.jay.favour.Variables
 import com.jay.favour.leaf.Chill
 import com.jay.favour.leaf.ChillTwo
+import com.jay.favour.leaf.favour.arceuus.FindTexts
+import com.jay.favour.leaf.favour.arceuus.GetMission
+import com.jay.favour.leaf.favour.arceuus.TurnInText
 import com.jay.favour.leaf.favour.hosidius.Plough
 import com.jay.favour.leaf.favour.lovakengj.AggroSpider
 import com.jay.favour.leaf.favour.lovakengj.DropSulphur
@@ -45,10 +48,37 @@ class RepairCraneCheck(script: Favour) : Branch<Favour>(script, "Repair crane?")
 
 class MineVolcanicSulphurCheck(script: Favour) : Branch<Favour>(script, "Mine volcanic sulphur?") {
     override val successComponent: TreeComponent<Favour> = SafespotCheck(script)
-    override val failedComponent: TreeComponent<Favour> = MoveToCampCheck(script)
+    override val failedComponent: TreeComponent<Favour> = HealSoldierCheck(script)
 
     override fun validate(): Boolean {
         return Variables.favourType == "Lovakengj"
+    }
+}
+
+class HealSoldierCheck(script: Favour) : Branch<Favour>(script, "Heal soliders?") {
+    override val successComponent: TreeComponent<Favour> = MoveToCampCheck(script)
+    override val failedComponent: TreeComponent<Favour> = ToGetMission(script)
+
+    override fun validate(): Boolean {
+        return Variables.favourType == "Shayzien"
+    }
+}
+
+class ToGetMission(script: Favour) : Branch<Favour>(script, "Get mission from customer?") {
+    override val successComponent: TreeComponent<Favour> = GetMission(script)
+    override val failedComponent: TreeComponent<Favour> = ToTurnIn(script)
+
+    override fun validate(): Boolean {
+        return Variables.bookOrScroll.isBlank()
+    }
+}
+
+class ToTurnIn(script: Favour) : Branch<Favour>(script, "Turn in book/scroll to customer?") {
+    override val successComponent: TreeComponent<Favour> = TurnInText(script)
+    override val failedComponent: TreeComponent<Favour> = FindTexts(script)
+
+    override fun validate(): Boolean {
+        return Inventory.stream().name(Variables.bookOrScroll).isNotEmpty()
     }
 }
 

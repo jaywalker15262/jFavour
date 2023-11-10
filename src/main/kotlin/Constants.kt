@@ -41,6 +41,59 @@ object Constants {
         Tile(3054, 3249, 0), Tile(3054, 3248, 0), Tile(3054, 3247, 0),
         Tile(3054, 3246, 0)))
 
+    // Arceuus favour - Finding texts
+    val TEXTS = arrayOf(Pair("Byrnes Coronation Speech", "Speech of King Byrne I, on the occasion of his coronation."),
+        Pair("Eathram & Rada extract", "An extract from Eathram & Rada, by Anonymous."),
+        Pair("Hosidius Letter", "A letter from Lord Hosidius to the Council of Elders."),
+        Pair("Killing of a King", "Killing of a King, by Griselle."),
+        Pair("Rada's Census", "Census of King Rada III, by Matthias Vorseth."),
+        Pair("Rada's Journey", "The Journey of Rada, by Griselle."),
+        Pair("Ricktor's Diary 7", "Diary of Steklan Ricktor, volume 7."),
+        Pair("Soul Journey", "The Journey of Souls, by Aretha."),
+        Pair("The Treachery of Royalty", "The Treachery of Royalty, by Professor Answith."),
+        Pair("The Ideology of Darkness", "The Ideology of Darkness, by Philophaire."),
+        Pair("Transportation Incantations", "Transportation Incantations, by Amon Ducot."),
+        Pair("Transvergence Theory", "The Theory of Transvergence, by Amon Ducot."),
+        Pair("Tristessa's Tragedy", "The Tragedy of Tristessa."),
+        Pair("Twill Accord", "The Royal Accord of Twill."),
+        Pair("Varlamore Envoy", "The Envoy to Varlamore, by Deryk Paulson."),
+        Pair("Wintertodt Parable", "The Parable of the Wintertodt, by Anonymous."))
+    val TILE_ARCEUUS_CENTER = Tile(1632, 3808, 0)
+    val TILES_ARCEUUS_LIBRARY_SW = arrayOf(Tile(1625, 3820, 0), Tile(1624, 3821, 0),
+        Tile(1621, 3821, 0), Tile(1620, 3815, 0), Tile(1618, 3815, 0),
+        Tile(1617, 3815, 0), Tile(1616, 3816, 0), Tile(1616, 3817, 0),
+        Tile(1616, 3820, 0), Tile(1613, 3820, 0), Tile(1613, 3817, 0),
+        Tile(1613, 3817, 0), Tile(1612, 3815, 0), Tile(1610, 3815, 0),
+        Tile(1608, 3816, 0), Tile(1608, 3817, 0), Tile(1608, 3820, 0),
+        Tile(1608, 3826, 0), Tile(1608, 3828, 0), Tile(1609, 3830, 0),
+        Tile(1612, 3830, 0), Tile(1614, 3830, 0), Tile(1619, 3830, 0),
+        Tile(1621, 3830, 0), Tile(1624, 3830, 0), Tile(1625, 3829, 0),
+        Tile(1625, 3827, 0), Tile(1624, 3824, 0), Tile(1622, 3824, 0),
+        Tile(1620, 3824, 0))
+
+
+
+    private val SUBAREA_ARCEUUS_LIBRARY_1 = Area(Tile(1607, 3831, 0), Tile(1626, 3831, 0),
+        Tile(1626, 3817, 0), Tile(1639, 3817, 0), Tile(1639, 3832, 0),
+        Tile(1659, 3832, 0), Tile(1659, 3814, 0), Tile(1642, 3814, 0),
+        Tile(1623, 3814, 0), Tile(1607, 3814, 0))
+    private val SUBAREA_ARCEUUS_LIBRARY_2 = Area(Tile(1623, 3814, 0), Tile(1643, 3814, 0),
+        Tile(1643, 3798, 0), Tile(1627, 3798, 0), Tile(1627, 3801, 0),
+        Tile(1623, 3801, 0))
+    private val SUBAREA_ARCEUUS_LIBRARY_3 = Area(Tile(1626, 3800, 0), Tile(1626, 3784, 0),
+        Tile(1607, 3784, 0), Tile(1607, 3801, 0), Tile(1627, 3801, 0))
+    val AREA_ARCEUUS_LIBRARY = run {
+        val mergedTiles = mutableSetOf<Tile>()
+        for (area in arrayOf(SUBAREA_ARCEUUS_LIBRARY_1, SUBAREA_ARCEUUS_LIBRARY_2, SUBAREA_ARCEUUS_LIBRARY_3)) {
+            area.tiles.forEach { tile ->
+                if (tile !in mergedTiles)
+                    mergedTiles.add(tile)
+            }
+        }
+
+        mergedTiles
+    }
+
     // Hosidius favour - Ploughing
     val TILE_PLOUGHING = Tile(1770, 3550, 0)
     val AREA_PLOUGHING = Area(Tile(1762, 3557, 0), Tile(1780, 3543, 0))
@@ -109,34 +162,6 @@ object Constants {
         Tile(1764, 3550, 0), Tile(1765, 3550, 0), Tile(1766, 3550, 0),
         Tile(1767, 3550, 0), Tile(1768, 3550, 0), Tile(1769, 3550, 0),
         Tile(1770, 3550, 0)))
-
-    // Piscarilius favour - Repairing cranes
-    val TILE_CRANE_SPOT = Tile(1815, 3726, 0)
-    val AREA_CRANES = Area(Tile(1816, 3730, 0), Tile(1821, 3722, 0))
-    val AREA_CRANES_BIG = Area(Tile(1804, 3730, 0), Tile(1821, 3722))
-    val PATH_CRANES = TilePath(arrayOf(Tile(1824, 3691, 0), Tile(1824, 3690, 0),
-        Tile(1823, 3690, 0), Tile(1822, 3690, 0), Tile(1821, 3690, 0),
-        Tile(1820, 3690, 0), Tile(1819, 3690, 0), Tile(1818, 3690, 0),
-        Tile(1817, 3690, 0), Tile(1816, 3690, 0), Tile(1815, 3690, 0),
-        Tile(1814, 3690, 0), Tile(1813, 3690, 0), Tile(1812, 3690, 0),
-        Tile(1811, 3690, 0), Tile(1810, 3690, 0), Tile(1809, 3690, 0),
-        Tile(1808, 3690, 0), Tile(1807, 3691, 0), Tile(1806, 3692, 0),
-        Tile(1806, 3693, 0), Tile(1806, 3694, 0), Tile(1806, 3695, 0),
-        Tile(1806, 3696, 0), Tile(1806, 3697, 0), Tile(1806, 3698, 0),
-        Tile(1806, 3699, 0), Tile(1806, 3700, 0), Tile(1806, 3701, 0),
-        Tile(1806, 3702, 0), Tile(1806, 3703, 0), Tile(1806, 3704, 0),
-        Tile(1806, 3705, 0), Tile(1806, 3706, 0), Tile(1806, 3707, 0),
-        Tile(1806, 3708, 0), Tile(1806, 3709, 0), Tile(1806, 3710, 0),
-        Tile(1806, 3711, 0), Tile(1806, 3712, 0), Tile(1806, 3713, 0),
-        Tile(1806, 3714, 0), Tile(1805, 3715, 0), Tile(1804, 3716, 0),
-        Tile(1803, 3716, 0), Tile(1802, 3716, 0), Tile(1802, 3717, 0),
-        Tile(1802, 3718, 0), Tile(1802, 3719, 0), Tile(1802, 3720, 0),
-        Tile(1802, 3721, 0), Tile(1803, 3721, 0), Tile(1804, 3721, 0),
-        Tile(1805, 3721, 0), Tile(1806, 3721, 0), Tile(1807, 3721, 0),
-        Tile(1808, 3721, 0), Tile(1809, 3721, 0), Tile(1810, 3721, 0),
-        Tile(1811, 3721, 0), Tile(1812, 3721, 0), Tile(1813, 3721, 0),
-        Tile(1813, 3722, 0), Tile(1813, 3723, 0), Tile(1813, 3724, 0),
-        Tile(1814, 3725, 0), Tile(1815, 3726, 0)))
 
     // Lovakengj  favour - Mining volcanic sulphur
     val TILE_SAFESPOT_SETUP = Tile(1426, 3871, 0)
@@ -326,7 +351,35 @@ object Constants {
         Tile(1436, 3837, 0), Tile(1437, 3837, 0), Tile(1437, 3836, 0),
         Tile(1437, 3835, 0), Tile(1437, 3834, 0)))
 
-    // Shayzien favour -Mending wounded soldiers
+    // Piscarilius favour - Repairing cranes
+    val TILE_CRANE_SPOT = Tile(1815, 3726, 0)
+    val AREA_CRANES = Area(Tile(1816, 3730, 0), Tile(1821, 3722, 0))
+    val AREA_CRANES_BIG = Area(Tile(1804, 3730, 0), Tile(1821, 3722))
+    val PATH_CRANES = TilePath(arrayOf(Tile(1824, 3691, 0), Tile(1824, 3690, 0),
+        Tile(1823, 3690, 0), Tile(1822, 3690, 0), Tile(1821, 3690, 0),
+        Tile(1820, 3690, 0), Tile(1819, 3690, 0), Tile(1818, 3690, 0),
+        Tile(1817, 3690, 0), Tile(1816, 3690, 0), Tile(1815, 3690, 0),
+        Tile(1814, 3690, 0), Tile(1813, 3690, 0), Tile(1812, 3690, 0),
+        Tile(1811, 3690, 0), Tile(1810, 3690, 0), Tile(1809, 3690, 0),
+        Tile(1808, 3690, 0), Tile(1807, 3691, 0), Tile(1806, 3692, 0),
+        Tile(1806, 3693, 0), Tile(1806, 3694, 0), Tile(1806, 3695, 0),
+        Tile(1806, 3696, 0), Tile(1806, 3697, 0), Tile(1806, 3698, 0),
+        Tile(1806, 3699, 0), Tile(1806, 3700, 0), Tile(1806, 3701, 0),
+        Tile(1806, 3702, 0), Tile(1806, 3703, 0), Tile(1806, 3704, 0),
+        Tile(1806, 3705, 0), Tile(1806, 3706, 0), Tile(1806, 3707, 0),
+        Tile(1806, 3708, 0), Tile(1806, 3709, 0), Tile(1806, 3710, 0),
+        Tile(1806, 3711, 0), Tile(1806, 3712, 0), Tile(1806, 3713, 0),
+        Tile(1806, 3714, 0), Tile(1805, 3715, 0), Tile(1804, 3716, 0),
+        Tile(1803, 3716, 0), Tile(1802, 3716, 0), Tile(1802, 3717, 0),
+        Tile(1802, 3718, 0), Tile(1802, 3719, 0), Tile(1802, 3720, 0),
+        Tile(1802, 3721, 0), Tile(1803, 3721, 0), Tile(1804, 3721, 0),
+        Tile(1805, 3721, 0), Tile(1806, 3721, 0), Tile(1807, 3721, 0),
+        Tile(1808, 3721, 0), Tile(1809, 3721, 0), Tile(1810, 3721, 0),
+        Tile(1811, 3721, 0), Tile(1812, 3721, 0), Tile(1813, 3721, 0),
+        Tile(1813, 3722, 0), Tile(1813, 3723, 0), Tile(1813, 3724, 0),
+        Tile(1814, 3725, 0), Tile(1815, 3726, 0)))
+
+    // Shayzien favour - Mending wounded soldiers
     val WOUNDED_SOLDIER_IDS = arrayOf(6848, 6838, 6830, 6852, 6844, 6854, 6846, 6832, 6840, 6836, 6828, 6856, 6826,
         6834, 6842, 6850)
     val TILE_MEDPACK_BOX = Tile(1521, 3615, 0)
@@ -341,5 +394,4 @@ object Constants {
         Tile(1510, 3624, 0), Tile(1510, 3615, 0), Tile(1511, 3615, 0),
         Tile(1516, 3615, 0), Tile(1517, 3615, 0))
     val AREA_SHAYZIEN_CAMP = Area(Tile(1509, 3632, 0), Tile(1534, 3613, 0))
-
 }
