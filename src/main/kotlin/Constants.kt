@@ -143,6 +143,20 @@ object Constants {
 
         mergedTiles
     }
+    val SUBAREA_ARCEUUS_LIBRARY_NW = Area(Tile(1607, 3832, 0), Tile(1627, 3814, 0))
+    val SUBAREA_ARCEUUS_LIBRARY_NE = Area(Tile(1639, 3832, 0), Tile(1659, 3814, 0))
+    val SUBAREA_ARCEUUS_LIBRARY_SW = Area(Tile(1607, 3802, 0), Tile(1627, 3784, 0))
+    val AREA_ARCEUUS_LIBRARY_MINUS_CENTER = run {
+        val mergedTiles = mutableSetOf<Tile>()
+        for (area in arrayOf(SUBAREA_ARCEUUS_LIBRARY_NW, SUBAREA_ARCEUUS_LIBRARY_NE, SUBAREA_ARCEUUS_LIBRARY_SW)) {
+            area.tiles.forEach { tile ->
+                if (tile !in mergedTiles)
+                    mergedTiles.add(tile)
+            }
+        }
+
+        mergedTiles
+    }
 
     // Hosidius favour - Ploughing
     val TILE_PLOUGHING = Tile(1770, 3550, 0)
