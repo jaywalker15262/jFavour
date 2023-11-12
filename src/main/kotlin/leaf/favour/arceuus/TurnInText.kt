@@ -24,7 +24,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
                 }
 
                 Variables.pathToCenterOfLibrary.traverse()
-                if(Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8 ||
+                if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8 ||
                     !Condition.wait({ !Players.local().inMotion()
                             || Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() < 4 }, 50, 80))
                     return

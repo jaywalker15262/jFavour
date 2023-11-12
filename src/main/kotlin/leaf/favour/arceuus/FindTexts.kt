@@ -2,39 +2,45 @@ package com.jay.favour.leaf.favour.arceuus
 
 import com.jay.favour.Constants
 import com.jay.favour.Favour
-import org.powbot.api.Tile
+import com.jay.favour.Variables
+import org.powbot.api.Condition
+import org.powbot.api.rt4.Movement
+import org.powbot.api.rt4.Objects
 import org.powbot.api.rt4.Players
 import org.powbot.api.script.tree.Leaf
 
 class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
     override fun execute() {
-        val playerTile = Players.local().tile()
-        if (!Constants.AREA_ARCEUUS_LIBRARY_MINUS_CENTER.contains(playerTile)) {
-            val closestFirstTile = findClosestTile(
-                playerTile, Constants.TILES_ARCEUUS_LIBRARY_NW,
-                Constants.TILES_ARCEUUS_LIBRARY_NE, Constants.TILES_ARCEUUS_LIBRARY_SW)
-            if (!closestFirstTile.valid()) {
-                script.info("Failed to find the closest tile to us from one of the sections in the library.")
-                return
-            }
-        }
-    }
-
-    private fun findClosestTile(playerTile: Tile, vararg arrays: Array<Tile>): Tile {
-        var closestTile = Tile.Nil
-        var minDistance = Int.MAX_VALUE
-
-        for (array in arrays) {
-            if (array.isNotEmpty()) {
-                val distance = playerTile.distanceTo(array[0]).toInt()
-
-                if (distance < minDistance) {
-                    minDistance = distance
-                    closestTile = array[0]
+        // northwest first floor
+        for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW.indices) {
+            if (!Variables.bookshelvesSearched[bookshelfIndex]) {
+                val bookshelf = Objects.stream().name("Bookshelf")
+                    .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW[bookshelfIndex]).first()
+                if (!bookshelf.valid()) {
+                    script.info("Failed to find the bookshelf.")
+                    return
                 }
+
+                if (Players.local().tile() != Constants.TILES_ARCEUUS_LIBRARY_NW[bookshelfIndex]) {
+                    if (!Movement.step(Constants.TILES_ARCEUUS_LIBRARY_NW[bookshelfIndex])
+                        || !Condition.wait({ Players.local().inMotion() }, 50, 80)
+                        || !Condition.wait({ !Players.local().inMotion() && Players.local().distanceTo(
+                            Constants.TILES_ARCEUUS_LIBRARY_NW[bookshelfIndex]) < 3 }, 100, 40)) {
+                        script.info("Failed to step towards the bookshelf.")
+                        return
+                    }
+                }
+
+                Variables.searchedShelf = false
+                bookshelf.bounds(-6, 6, -128, 48, -6, 6)
+                if (!bookshelf.interact("Search")
+                    || !Condition.wait({ Variables.searchedShelf }, 50, 80)) {
+                    script.info("Failed to search the bookshelf.")
+                    return
+                }
+
+                Variables.bookshelvesSearched[bookshelfIndex] = true
             }
         }
-
-        return closestTile
     }
 }

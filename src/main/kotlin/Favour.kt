@@ -3,6 +3,8 @@ package com.jay.favour
 import com.google.common.eventbus.Subscribe
 import com.jay.favour.branch.IsLoggedIn
 import org.powbot.api.Color
+import org.powbot.api.event.MessageEvent
+import org.powbot.api.event.MessageType
 import org.powbot.api.event.PlayerAnimationChangedEvent
 import org.powbot.api.rt4.Inventory
 import org.powbot.api.rt4.Players
@@ -169,6 +171,20 @@ class Favour : TreeScript() {
 
     private fun severe(message: String) {
         log.severe("JayLOGS: $message")
+    }
+
+    @Subscribe
+    private fun message(messageEvent: MessageEvent) {
+        // Ensure it's a game message not a player trying to mess it up
+        if (messageEvent.messageType != MessageType.Game)
+            return
+
+        when (messageEvent.message) {
+            "You don't find anything useful here." -> {
+                Variables.searchedShelf = true
+                return
+            }
+        }
     }
 
     @Subscribe

@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Added tiles for all bottom floors.">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic.">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/MoveToNextCorner.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Favour.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/branch/FavourBranches.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/GetMission.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/GetMission.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +131,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1699632596286</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Progress on finding text logic.">
+      <created>1699666888637</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1699666888637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -137,6 +149,7 @@
     <MESSAGE value="Add Shayzien as well." />
     <MESSAGE value="Part of Arceuus favour added." />
     <MESSAGE value="Added tiles for all bottom floors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tiles for all bottom floors." />
+    <MESSAGE value="Progress on finding text logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic." />
   </component>
 </project>

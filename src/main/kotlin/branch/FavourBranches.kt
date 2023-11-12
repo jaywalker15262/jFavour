@@ -7,6 +7,7 @@ import com.jay.favour.leaf.Chill
 import com.jay.favour.leaf.ChillTwo
 import com.jay.favour.leaf.favour.arceuus.FindTexts
 import com.jay.favour.leaf.favour.arceuus.GetMission
+import com.jay.favour.leaf.favour.arceuus.MoveToNextCorner
 import com.jay.favour.leaf.favour.arceuus.TurnInText
 import com.jay.favour.leaf.favour.hosidius.Plough
 import com.jay.favour.leaf.favour.lovakengj.AggroSpider
@@ -75,10 +76,19 @@ class ToGetMission(script: Favour) : Branch<Favour>(script, "Get mission from cu
 
 class ToTurnIn(script: Favour) : Branch<Favour>(script, "Turn in book/scroll to customer?") {
     override val successComponent: TreeComponent<Favour> = TurnInText(script)
-    override val failedComponent: TreeComponent<Favour> = FindTexts(script)
+    override val failedComponent: TreeComponent<Favour> = ToMoveToNextCorner(script)
 
     override fun validate(): Boolean {
         return Inventory.stream().name(Variables.bookOrScroll).isNotEmpty()
+    }
+}
+
+class ToMoveToNextCorner(script: Favour) : Branch<Favour>(script, "Move to next corner?") {
+    override val successComponent: TreeComponent<Favour> = MoveToNextCorner(script)
+    override val failedComponent: TreeComponent<Favour> = FindTexts(script)
+
+    override fun validate(): Boolean {
+        return Variables.goToBeginning
     }
 }
 

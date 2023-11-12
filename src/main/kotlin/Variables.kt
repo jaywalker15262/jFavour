@@ -20,11 +20,16 @@ object Variables {
     var veosTileMatrix = Constants.TILE_VEOS.matrix()
 
     // Arceuus favour - Finding texts
+    var searchedShelf = false
+    var goToBeginning = true
     var bookOrScroll = ""
     var customer = ""
     var pathToCustomer = TilePath(arrayOf())
     var pathToCenterOfLibrary = TilePath(arrayOf())
-
+    var pathToNextLibraryArea = TilePath(arrayOf())
+    val bookshelvesSearched = arrayOf(false, false, false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
+        false, false, false, false, false)
     // Hosidius favour - Ploughing
     var ploughXCoord = 0
     var timeSinceLastPlough: Long = 0
