@@ -27,7 +27,9 @@ object Variables {
     var pathToCustomer = TilePath(arrayOf())
     var pathToCenterOfLibrary = TilePath(arrayOf())
     var pathToNextLibraryArea = TilePath(arrayOf())
-    val bookshelvesSearched = arrayOf(false, false, false, false, false, false, false, false, false,
+    val bookshelvesSearched = arrayOf(false, false, false, false, false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false)
     // Hosidius favour - Ploughing
