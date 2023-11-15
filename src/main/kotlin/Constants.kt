@@ -129,6 +129,19 @@ object Constants {
         Tile(1623, 3795, 2), Tile(1623, 3794, 2), Tile(1623, 3792, 2),
         Tile(1623, 3792, 2), Tile(1622, 3792, 2), Tile(1619, 3792, 2),
         Tile(1619, 3792, 2), Tile(1619, 3793, 2), Tile(1619, 3794, 2))
+    val TILES_ARCEUUS_LIBRARY_NW_5 = arrayOf(Tile(1621, 3790, 1), Tile(1623, 3790, 1),
+        Tile(1623, 3791, 1), Tile(1623, 3792, 1), Tile(1623, 3796, 1),
+        Tile(1623, 3798, 1), Tile(1623, 3798, 1), Tile(1621, 3798, 1),
+        Tile(1616, 3798, 1), Tile(1615, 3798, 1), Tile(1610, 3798, 1),
+        Tile(1608, 3798, 1), Tile(1608, 3794, 1), Tile(1608, 3793, 1),
+        Tile(1608, 3792, 1), Tile(1609, 3792, 1), Tile(1610, 3792, 1),
+        Tile(1613, 3792, 1), Tile(1614, 3792, 1), Tile(1616, 3790, 1),
+        Tile(1616, 3788, 1), Tile(1613, 3789, 1), Tile(1613, 3789, 1),
+        Tile(1611, 3789, 1), Tile(1609, 3789, 1), Tile(1608, 3789, 1),
+        Tile(1608, 3788, 1), Tile(1611, 3785, 1), Tile(1612, 3785, 1),
+        Tile(1616, 3785, 1), Tile(1618, 3785, 1), Tile(1619, 3785, 1),
+        Tile(1623, 3786, 1), Tile(1623, 3787, 1), Tile(1621, 3787, 1),
+        Tile(1620, 3787, 1))
 
 
     val TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW = arrayOf(Tile(1626, 3820, 0), Tile(1624, 3822, 0),
@@ -201,6 +214,19 @@ object Constants {
         Tile(1624, 3795, 2), Tile(1624, 3794, 2), Tile(1624, 3792, 2),
         Tile(1623, 3791, 2), Tile(1622, 3791, 2), Tile(1619, 3791, 2),
         Tile(1618, 3792, 2), Tile(1618, 3793, 2), Tile(1618, 3794, 2))
+    val TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_5 = arrayOf(Tile(1621, 3789, 1), Tile(1623, 3789, 1),
+        Tile(1624, 3791, 1), Tile(1624, 3792, 1), Tile(1624, 3796, 1),
+        Tile(1624, 3798, 1), Tile(1623, 3799, 1), Tile(1621, 3799, 1),
+        Tile(1616, 3799, 1), Tile(1615, 3799, 1), Tile(1610, 3799, 1),
+        Tile(1608, 3799, 1), Tile(1607, 3794, 1), Tile(1607, 3793, 1),
+        Tile(1608, 3791, 1), Tile(1609, 3791, 1), Tile(1610, 3791, 1),
+        Tile(1613, 3791, 1), Tile(1614, 3791, 1), Tile(1615, 3790, 1),
+        Tile(1615, 3788, 1), Tile(1614, 3789, 1), Tile(1613, 3790, 1),
+        Tile(1611, 3790, 1), Tile(1609, 3790, 1), Tile(1607, 3789, 1),
+        Tile(1607, 3788, 1), Tile(1611, 3784, 1), Tile(1612, 3784, 1),
+        Tile(1616, 3784, 1), Tile(1618, 3784, 1), Tile(1619, 3784, 1),
+        Tile(1624, 3786, 1), Tile(1624, 3787, 1), Tile(1621, 3788, 1),
+        Tile(1620, 3788, 1))
 
 
 
@@ -216,10 +242,12 @@ object Constants {
     private val SUBAREA_ARCEUUS_LIBRARY_4 = Area(Tile(1607, 3832, 1), Tile(1625, 3816, 1))
     private val SUBAREA_ARCEUUS_LIBRARY_5 = Area(Tile(1607, 3832, 2), Tile(1625, 3816, 2))
     private val SUBAREA_ARCEUUS_LIBRARY_6 = Area(Tile(1608, 3800, 2), Tile(1624, 3784, 2))
+    private val SUBAREA_ARCEUUS_LIBRARY_7 = Area(Tile(1607, 3799, 1), Tile(1624, 3784, 1))
     val AREA_ARCEUUS_LIBRARY = run {
         val mergedTiles = mutableSetOf<Tile>()
         for (area in arrayOf(SUBAREA_ARCEUUS_LIBRARY_1, SUBAREA_ARCEUUS_LIBRARY_2, SUBAREA_ARCEUUS_LIBRARY_3,
-            SUBAREA_ARCEUUS_LIBRARY_4, SUBAREA_ARCEUUS_LIBRARY_5, SUBAREA_ARCEUUS_LIBRARY_6)) {
+            SUBAREA_ARCEUUS_LIBRARY_4, SUBAREA_ARCEUUS_LIBRARY_5, SUBAREA_ARCEUUS_LIBRARY_6,
+            SUBAREA_ARCEUUS_LIBRARY_7)) {
             area.tiles.forEach { tile ->
                 if (tile !in mergedTiles)
                     mergedTiles.add(tile)

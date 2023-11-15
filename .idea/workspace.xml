@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt3">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
@@ -144,7 +144,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1699997496299</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Progress on finding text logic. Pt4">
+      <created>1700072841464</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1700072841464</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,6 +165,7 @@
     <MESSAGE value="Progress on finding text logic." />
     <MESSAGE value="Progress on finding text logic. Pt2" />
     <MESSAGE value="Progress on finding text logic. Pt3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt3" />
+    <MESSAGE value="Progress on finding text logic. Pt4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt4" />
   </component>
 </project>

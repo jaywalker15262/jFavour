@@ -37,28 +37,28 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 if (arrayOf(12,27).contains(bookshelfIndex)) {
                     Camera.angle(180, 5)
-                    if (!Condition.wait({ Camera.yaw() in 170..190 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(6,14).contains(bookshelfIndex)) {
                     Camera.angle(90, 5)
-                    if (!Condition.wait({ Camera.yaw() in 80..100 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 70..110 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(9,25).contains(bookshelfIndex)) {
                     Camera.angle(270, 5)
-                    if (!Condition.wait({ Camera.yaw() in 260..280 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 250..290 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(19).contains(bookshelfIndex)) {
                     Camera.angle(0, 5)
-                    if (!Condition.wait({ Camera.yaw() > 350 || Camera.yaw() < 10 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
@@ -77,11 +77,11 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
         }*/
 
         // walk up northwest bottom floor stairs
-        if (Players.local().floor() == 0) {
-            if (Camera.yaw() in 10..350) {
+        if (Players.local().floor() == 0 && Players.local().y() > 3800) {
+            if (Camera.yaw() in 20..340) {
                 Camera.angle(0, 5)
-                if (!Condition.wait({ Camera.yaw() > 350 || Camera.yaw() < 10 }, 50, 80)) {
-                    script.info("Failed to angle the camera towards the bookshelf.")
+                if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
+                    script.info("Failed to angle the camera towards the stairs.")
                     return
                 }
             }
@@ -120,33 +120,33 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || Condition.wait({ !Chat.chatting() }, 50, 30)))
                     return
 
                 if (arrayOf(25).contains(bookshelfIndex)) {
                     Camera.angle(180, 5)
-                    if (!Condition.wait({ Camera.yaw() in 170..190 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(2,16,31).contains(bookshelfIndex)) {
                     Camera.angle(90, 5)
-                    if (!Condition.wait({ Camera.yaw() in 80..100 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 70..110 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(11,19).contains(bookshelfIndex)) {
                     Camera.angle(270, 5)
-                    if (!Condition.wait({ Camera.yaw() in 260..280 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 250..290 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(5,33).contains(bookshelfIndex)) {
                     Camera.angle(0, 5)
-                    if (!Condition.wait({ Camera.yaw() > 350 || Camera.yaw() < 10 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
@@ -164,8 +164,8 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }*/
 
-        // walk up northwest bottom floor stairs
-        if (Players.local().floor() == 1) {
+        // walk up northwest middle floor stairs
+        if (Players.local().floor() == 1 && Players.local().y() > 3800) {
             val stairs = Objects.stream().name("Stairs").at(Tile(1613, 3819, 1)).first()
             if (!stairs.valid()) {
                 script.info("We were unable to find any stairs.")
@@ -205,28 +205,28 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 if (arrayOf(12,19).contains(bookshelfIndex)) {
                     Camera.angle(180, 5)
-                    if (!Condition.wait({ Camera.yaw() in 170..190 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(0,8,21).contains(bookshelfIndex)) {
                     Camera.angle(90, 5)
-                    if (!Condition.wait({ Camera.yaw() in 80..100 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 70..110 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(17,27).contains(bookshelfIndex)) {
                     Camera.angle(270, 5)
-                    if (!Condition.wait({ Camera.yaw() in 260..280 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 250..290 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 }
                 else if (arrayOf(2,15,23,31).contains(bookshelfIndex)) {
                     Camera.angle(0, 5)
-                    if (!Condition.wait({ Camera.yaw() > 350 || Camera.yaw() < 10 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
@@ -268,30 +268,30 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || Condition.wait({ !Chat.chatting() }, 50, 30)))
                     return
 
                 if (arrayOf(10,35).contains(bookshelfIndex)) {
                     Camera.angle(180, 5)
-                    if (!Condition.wait({ Camera.yaw() in 170..190 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 } else if (arrayOf(3,8,23,38).contains(bookshelfIndex)) {
                     Camera.angle(90, 5)
-                    if (!Condition.wait({ Camera.yaw() in 80..100 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 70..110 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 } else if (arrayOf(5,14,26,31).contains(bookshelfIndex)) {
                     Camera.angle(270, 5)
-                    if (!Condition.wait({ Camera.yaw() in 260..280 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() in 250..290 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
                 } else if (arrayOf(18,29).contains(bookshelfIndex)) {
                     Camera.angle(0, 5)
-                    if (!Condition.wait({ Camera.yaw() > 350 || Camera.yaw() < 10 }, 50, 80)) {
+                    if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
@@ -306,6 +306,92 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 Variables.bookshelvesSearched[98 + bookshelfIndex] = true
+            }
+        }
+
+        // walk up northwest bottom floor stairs
+        if (Players.local().floor() == 2) {
+            if (Camera.yaw() in 20..340) {
+                Camera.angle(0, 5)
+                if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
+                    script.info("Failed to angle the camera towards the stairs.")
+                    return
+                }
+            }
+
+            val stairs = Objects.stream().name("Stairs").at(Tile(1622, 3796, 2)).first()
+            if (!stairs.valid()) {
+                script.info("We were unable to find any stairs.")
+                return
+            }
+
+            if (!stairs.interact("Climb") || !Condition.wait({ Game.floor() == 1 }, 50, 120)) {
+                script.info("We were unable to walk down the stairs.")
+                return
+            }
+        }
+
+        // southwest middle floor
+        for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_5.indices) {
+            if (!Variables.bookshelvesSearched[139 + bookshelfIndex]) {
+                val bookshelf = Objects.stream().name("Bookshelf")
+                    .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_5[bookshelfIndex]).first()
+                if (!bookshelf.valid()) {
+                    script.info("Failed to find the bookshelf.")
+                    return
+                }
+
+                if (arrayOf(12,28,33).contains(bookshelfIndex)
+                    && Players.local().tile() != Constants.TILES_ARCEUUS_LIBRARY_NW_5[bookshelfIndex]) {
+                    if (!Movement.step(Constants.TILES_ARCEUUS_LIBRARY_NW_5[bookshelfIndex])
+                        || !Condition.wait({ Players.local().inMotion() }, 50, 80)
+                        || !Condition.wait({
+                            !Players.local().inMotion() && Players.local().distanceTo(
+                                Constants.TILES_ARCEUUS_LIBRARY_NW_5[bookshelfIndex]) < 3 }, 100, 40)) {
+                        script.info("Failed to step towards the bookshelf.")
+                        return
+                    }
+                }
+
+                if (Chat.chatting() && (!Chat.clickContinue()
+                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                    return
+
+                if (arrayOf(0,13,27).contains(bookshelfIndex)) {
+                    Camera.angle(180, 5)
+                    if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
+                        script.info("Failed to angle the camera towards the bookshelf.")
+                        return
+                    }
+                } else if (arrayOf(12,19,25).contains(bookshelfIndex)) {
+                    Camera.angle(90, 5)
+                    if (!Condition.wait({ Camera.yaw() in 70..110 }, 50, 30)) {
+                        script.info("Failed to angle the camera towards the bookshelf.")
+                        return
+                    }
+                } else if (arrayOf(2,21,32).contains(bookshelfIndex)) {
+                    Camera.angle(270, 5)
+                    if (!Condition.wait({ Camera.yaw() in 250..290 }, 50, 30)) {
+                        script.info("Failed to angle the camera towards the bookshelf.")
+                        return
+                    }
+                } else if (arrayOf(6,22,34).contains(bookshelfIndex)) {
+                    Camera.angle(0, 5)
+                    if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
+                        script.info("Failed to angle the camera towards the bookshelf.")
+                        return
+                    }
+                }
+
+                Variables.searchedShelf = false
+                bookshelf.bounds(-6, 6, -160, -96, -6, 6)
+                if (!bookshelf.interact("Search")
+                    || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
+                    script.info("Failed to search the bookshelf.")
+                    return
+                }
+
+                Variables.bookshelvesSearched[139 + bookshelfIndex] = true
             }
         }
     }
