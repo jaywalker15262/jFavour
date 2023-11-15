@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt2">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/MoveToNextCorner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/MoveToNextCorner.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +138,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1699748406222</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="Progress on finding text logic. Pt3">
+      <created>1699997496299</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1699997496299</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -153,6 +158,7 @@
     <MESSAGE value="Added tiles for all bottom floors." />
     <MESSAGE value="Progress on finding text logic." />
     <MESSAGE value="Progress on finding text logic. Pt2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt2" />
+    <MESSAGE value="Progress on finding text logic. Pt3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt3" />
   </component>
 </project>
