@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt6">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Progress on finding text logic. Pt7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
     </list>
@@ -161,7 +162,13 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1700095222559</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="Progress on finding text logic. Pt7">
+      <created>1700096237622</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1700096237622</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -179,6 +186,7 @@
     <MESSAGE value="Progress on finding text logic. Pt4" />
     <MESSAGE value="Progress on finding text logic. Pt5" />
     <MESSAGE value="Progress on finding text logic. Pt6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt6" />
+    <MESSAGE value="Progress on finding text logic. Pt7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on finding text logic. Pt7" />
   </component>
 </project>
