@@ -606,7 +606,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                             || Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
-                if (arrayOf(4).contains(bookshelfIndex)) {
+                if (arrayOf(5).contains(bookshelfIndex)) {
                     Camera.angle(180, 5)
                     if (!Condition.wait({ Camera.yaw() in 160..200 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
