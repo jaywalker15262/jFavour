@@ -65,7 +65,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
                 Variables.pathToCustomer = TilePath(path)
             }
 
-            Constants.PATH_CRANES.traverse()
+            Variables.pathToCustomer.traverse()
             if (customer.distanceTo(Players.local()).toInt() > 8 ||
                 !Condition.wait({ !Players.local().inMotion()
                         || Players.local().distanceTo(customer).toInt() < 4 }, 50, 80))
