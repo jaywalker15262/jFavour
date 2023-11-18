@@ -244,6 +244,17 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
+        // travel to soutwest top floor area
+        if (Variables.walkToSouthWestArea) {
+            Variables.pathToSouthWestTopFloorArea.traverse()
+            if (!Constants.SUBAREA_ARCEUUS_LIBRARY_6.contains(Players.local()) ||
+                !Condition.wait({ !Players.local().inMotion() || Players.local()
+                    .distanceTo(Constants.TILES_ARCEUUS_LIBRARY_SW[0]).toInt() < 4 }, 50, 80))
+                return
+
+            Variables.walkToSouthWestArea = false
+        }
+
         // southwest top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW.indices) {
             if (!Variables.bookshelvesSearched[98 + bookshelfIndex]) {
@@ -470,6 +481,17 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[175 + bookshelfIndex] = true
             }
+        }
+
+        // travel to soutwest top floor area
+        if (Variables.walkToNorthEastArea) {
+            Variables.pathToNorthEastBtmFloorArea.traverse()
+            if (Players.local().distanceTo(Constants.TILES_ARCEUUS_LIBRARY_NE[0]).toInt() > 8 ||
+                !Condition.wait({ !Players.local().inMotion() || Players.local()
+                    .distanceTo(Constants.TILES_ARCEUUS_LIBRARY_NE[0]).toInt() < 4 }, 50, 80))
+                return
+
+            Variables.walkToNorthEastArea = false
         }
 
         // northeast bottom floor

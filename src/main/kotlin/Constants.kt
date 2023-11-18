@@ -304,7 +304,7 @@ object Constants {
         Tile(1607, 3784, 0), Tile(1607, 3801, 0), Tile(1627, 3801, 0))
     private val SUBAREA_ARCEUUS_LIBRARY_4 = Area(Tile(1607, 3832, 1), Tile(1625, 3816, 1))
     private val SUBAREA_ARCEUUS_LIBRARY_5 = Area(Tile(1607, 3832, 2), Tile(1625, 3816, 2))
-    private val SUBAREA_ARCEUUS_LIBRARY_6 = Area(Tile(1608, 3800, 2), Tile(1625, 3784, 2))
+    val SUBAREA_ARCEUUS_LIBRARY_6 = Area(Tile(1608, 3800, 2), Tile(1625, 3784, 2))
     private val SUBAREA_ARCEUUS_LIBRARY_7 = Area(Tile(1607, 3799, 1), Tile(1624, 3784, 1))
     private val SUBAREA_ARCEUUS_LIBRARY_8 = Area(Tile(1641, 3832, 1), Tile(1659, 3816, 1))
     private val SUBAREA_ARCEUUS_LIBRARY_9 = Area(Tile(1641, 3832, 2), Tile(1659, 3816, 2))

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Start over again if we searched all bookshelves, as a failsafe.">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Oops.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +204,19 @@
       <option name="presentableId" value="LOCAL−00021" />
       <updated>1700311600883</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL−00022" summary="More fixes.">
+      <created>1700312467019</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1700312467019</updated>
+    </task>
+    <task id="LOCAL−00023" summary="Oops.">
+      <created>1700312527797</created>
+      <option name="number" value="LOCAL−00023" />
+      <option name="presentableId" value="LOCAL−00023" />
+      <updated>1700312527797</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -226,6 +240,8 @@
     <MESSAGE value="Progress on finding text logic. Pt10" />
     <MESSAGE value="Filling out the last missing areas." />
     <MESSAGE value="Start over again if we searched all bookshelves, as a failsafe." />
-    <option name="LAST_COMMIT_MESSAGE" value="Start over again if we searched all bookshelves, as a failsafe." />
+    <MESSAGE value="More fixes." />
+    <MESSAGE value="Oops." />
+    <option name="LAST_COMMIT_MESSAGE" value="Oops." />
   </component>
 </project>

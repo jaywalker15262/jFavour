@@ -28,7 +28,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
 
         val customer = Npcs.stream().name(Variables.customer).first()
         if (!customer.valid()) {
-            if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8) {
+            if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8) {
                 if (Variables.pathToCustomer.tiles.isEmpty()) {
                     val path = DaxWalker.getPath(Constants.TILE_ARCEUUS_CENTER).toTypedArray()
                     if (path.isEmpty()) {
@@ -40,7 +40,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
                 }
 
                 Variables.pathToCenterOfLibrary.traverse()
-                if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8 ||
+                if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8 ||
                     !Condition.wait({ !Players.local().inMotion()
                             || Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() < 4 }, 50, 80))
                     return

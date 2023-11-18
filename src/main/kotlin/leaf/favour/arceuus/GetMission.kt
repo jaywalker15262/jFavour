@@ -20,7 +20,7 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
 
         val customer = Npcs.stream().name(*customerNames.toTypedArray()).nearest().first()
         if (!customer.valid()) {
-            if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8) {
+            if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8) {
                 if (Variables.pathToCustomer.tiles.isEmpty()) {
                     val path = DaxWalker.getPath(Constants.TILE_ARCEUUS_CENTER).toTypedArray()
                     if (path.isEmpty()) {
@@ -32,7 +32,7 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
                 }
 
                 Variables.pathToCenterOfLibrary.traverse()
-                if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8 ||
+                if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8 ||
                     !Condition.wait({ !Players.local().inMotion()
                         || Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() < 4 }, 50, 80))
                     return
