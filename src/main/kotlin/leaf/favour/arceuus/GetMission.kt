@@ -18,17 +18,7 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
         val customer = Npcs.stream().name(*customerNames.toTypedArray()).nearest().first()
         if (!customer.valid()) {
             if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8) {
-                if (Variables.pathToCustomer.tiles.isEmpty()) {
-                    val path = DaxWalker.getPath(Constants.TILE_ARCEUUS_CENTER).toTypedArray()
-                    if (path.isEmpty()) {
-                        script.info("Unable to generate a path towards the center of the arceuus library.")
-                        return
-                    }
-
-                    Variables.pathToCenterOfLibrary = TilePath(path)
-                }
-
-                Variables.pathToCenterOfLibrary.traverse()
+                DaxWalker.walkTo(Constants.TILE_ARCEUUS_CENTER)
                 if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() > 8 ||
                     !Condition.wait({ !Players.local().inMotion()
                         || Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER).toInt() < 4 }, 50, 80))
@@ -40,29 +30,13 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
             }
         }
 
-        if (Variables.pathToCenterOfLibrary.tiles.isNotEmpty())
-            Variables.pathToCenterOfLibrary.tiles = arrayOf()
-
         if (customer.distanceTo(Players.local()).toInt() > 8 || !customer.inViewport(true)) {
-            if (Variables.pathToCustomer.tiles.isEmpty()) {
-                val path = DaxWalker.getPath(customer).toTypedArray()
-                if (path.isEmpty()) {
-                    script.info("Unable to generate a path towards one of the customers.")
-                    return
-                }
-
-                Variables.pathToCustomer = TilePath(path)
-            }
-
-            Constants.PATH_CRANES.traverse()
+            DaxWalker.walkTo(customer)
             if (customer.distanceTo(Players.local()).toInt() > 8 ||
                 !Condition.wait({ !Players.local().inMotion()
                         || Players.local().distanceTo(customer).toInt() < 4 }, 50, 80))
                 return
         }
-
-        if (Variables.pathToCustomer.tiles.isNotEmpty())
-            Variables.pathToCustomer.tiles = arrayOf()
 
         if (!customer.interact("Help") || !Condition.wait({ Chat.chatting() }, 50, 80)) {
             script.info("Failed to find that we are chatting after talking with the customer.")

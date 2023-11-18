@@ -27,8 +27,6 @@ object Variables {
     var walkToCenterTopArea = true
     var bookOrScroll = ""
     var customer = ""
-    var pathToCustomer = TilePath(arrayOf())
-    var pathToCenterOfLibrary = TilePath(arrayOf())
     var pathToNextLibraryArea = TilePath(arrayOf())
     val bookshelvesSearched = arrayOf(false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,

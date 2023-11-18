@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Bugfix.">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="More bugfix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/GetMission.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/GetMission.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Variables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,11 +233,16 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1700333984241</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL−00027" summary="More bugfix.">
+      <created>1700335045903</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1700335045903</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First commit." />
     <MESSAGE value="Volcanic sulphur support." />
     <MESSAGE value="Failsafe for inventory tab not being open when dropping volcanic sulphur." />
     <MESSAGE value="Oopsie." />
@@ -261,6 +267,7 @@
     <MESSAGE value="More final changes." />
     <MESSAGE value="Misc" />
     <MESSAGE value="Bugfix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix." />
+    <MESSAGE value="More bugfix." />
+    <option name="LAST_COMMIT_MESSAGE" value="More bugfix." />
   </component>
 </project>
