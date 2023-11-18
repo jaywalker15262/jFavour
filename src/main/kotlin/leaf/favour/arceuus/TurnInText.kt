@@ -75,5 +75,11 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
         }
 
         Variables.bookOrScroll = ""
+
+        // Set all true values to false
+        Variables.bookshelvesSearched.forEachIndexed { index, value ->
+            if (value)
+                Variables.bookshelvesSearched[index] = false
+        }
     }
 }

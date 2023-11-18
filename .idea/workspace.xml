@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Filling out the last missing areas.">
+    <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Start over again if we searched all bookshelves, as a failsafe.">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +189,13 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1700310900582</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Start over again if we searched all bookshelves, as a failsafe.">
+      <created>1700311436885</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1700311436885</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,6 +218,7 @@
     <MESSAGE value="Progress on finding text logic. Pt9" />
     <MESSAGE value="Progress on finding text logic. Pt10" />
     <MESSAGE value="Filling out the last missing areas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Filling out the last missing areas." />
+    <MESSAGE value="Start over again if we searched all bookshelves, as a failsafe." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start over again if we searched all bookshelves, as a failsafe." />
   </component>
 </project>
