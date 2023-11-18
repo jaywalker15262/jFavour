@@ -845,5 +845,12 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 Variables.bookshelvesSearched[315 + bookshelfIndex] = true
             }
         }
+
+        // Set all true values to false
+        Variables.bookshelvesSearched.forEachIndexed { index, value ->
+            if (value)
+                Variables.bookshelvesSearched[index] = false
+        }
+
     }
 }
