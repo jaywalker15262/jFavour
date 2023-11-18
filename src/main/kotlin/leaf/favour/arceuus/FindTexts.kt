@@ -11,7 +11,7 @@ import org.powbot.api.script.tree.Leaf
 class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
     override fun execute() {
         // northwest bottom floor
-        /*for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW.indices) {
+        for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW.indices) {
             if (!Variables.bookshelvesSearched[bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW[bookshelfIndex]).first()
@@ -74,7 +74,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk up northwest bottom floor stairs
         if (Players.local().floor() == 0 && Players.local().y() > 3800 && Players.local().x() < 1630) {
@@ -98,7 +98,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// northwest middle floor
+        // northwest middle floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_2.indices) {
             if (!Variables.bookshelvesSearched[30 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -162,7 +162,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[30 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk up northwest middle floor stairs
         if (Players.local().floor() == 1 && Players.local().y() > 3800 && Players.local().x() < 1630) {
@@ -178,7 +178,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// northwest top floor
+        // northwest top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_3.indices) {
             if (!Variables.bookshelvesSearched[64 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -243,9 +243,8 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 Variables.bookshelvesSearched[64 + bookshelfIndex] = true
             }
         }
-    }*/
 
-        /*// southwest top floor
+        // southwest top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW.indices) {
             if (!Variables.bookshelvesSearched[98 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -307,7 +306,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[98 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk down southwest top floor stairs
         if (Players.local().floor() == 2 && Players.local().y() < 3800) {
@@ -331,7 +330,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// southwest middle floor
+        // southwest middle floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_2.indices) {
             if (!Variables.bookshelvesSearched[139 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -393,7 +392,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[139 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk down southwest middle floor stairs
         if (Players.local().floor() == 1 && Players.local().y() < 3800) {
@@ -409,7 +408,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// southwest bottom floor
+        // southwest bottom floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_3.indices) {
             if (!Variables.bookshelvesSearched[175 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -471,9 +470,9 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[175 + bookshelfIndex] = true
             }
-        }*/
+        }
 
-        /*// northeast bottom floor
+        // northeast bottom floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE.indices) {
             if (!Variables.bookshelvesSearched[203 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -535,7 +534,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[203 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk up northeast bottom floor stairs
         if (Players.local().floor() == 0 && Players.local().y() > 3800 && Players.local().x() > 1630) {
@@ -559,7 +558,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// northeast middle floor
+        // northeast middle floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_2.indices) {
             if (!Variables.bookshelvesSearched[235 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -621,7 +620,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[235 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // walk up northeast middle floor stairs
         if (Players.local().floor() == 1 && Players.local().y() > 3814 && Players.local().x() > 1639) {
@@ -645,7 +644,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        /*// northeast top floor
+        // northeast top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_3.indices) {
             if (!Variables.bookshelvesSearched[263 + bookshelfIndex]) {
                 val bookshelf = Objects.stream().name("Bookshelf")
@@ -707,7 +706,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[263 + bookshelfIndex] = true
             }
-        }*/
+        }
 
         // center top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES.indices) {
