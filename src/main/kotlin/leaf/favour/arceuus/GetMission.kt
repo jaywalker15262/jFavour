@@ -73,7 +73,7 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
         }
 
         for (n in 1..10) {
-            val bookOrScroll = Constants.TEXTS.firstOrNull { Chat.getChatMessage().contains(it.second) } ?.second ?: ""
+            val bookOrScroll = Constants.TEXTS.firstOrNull { Chat.getChatMessage().contains(it.second) } ?.first ?: ""
             if (bookOrScroll.isNotBlank()) {
                 Variables.bookOrScroll = bookOrScroll
                 Variables.customer = customer.name

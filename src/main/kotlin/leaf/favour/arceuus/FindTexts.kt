@@ -246,8 +246,8 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
         // travel to soutwest top floor area
         if (Variables.walkToSouthWestArea) {
-            Variables.pathToSouthWestTopFloorArea.traverse()
-            if (!Constants.SUBAREA_ARCEUUS_LIBRARY_6.contains(Players.local()) ||
+            Constants.PATH_SOUTH_WEST_TOP_AREA.traverse()
+            if (!Constants.SUBAREA_ARCEUUS_LIBRARY_6.contains(Players.local().tile()) ||
                 !Condition.wait({ !Players.local().inMotion() || Players.local()
                     .distanceTo(Constants.TILES_ARCEUUS_LIBRARY_SW[0]).toInt() < 4 }, 50, 80))
                 return
@@ -485,7 +485,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
         // travel to soutwest top floor area
         if (Variables.walkToNorthEastArea) {
-            Variables.pathToNorthEastBtmFloorArea.traverse()
+            Constants.PATH_NORTH_EAST_BOTTOM_AREA.traverse()
             if (Players.local().distanceTo(Constants.TILES_ARCEUUS_LIBRARY_NE[0]).toInt() > 8 ||
                 !Condition.wait({ !Players.local().inMotion() || Players.local()
                     .distanceTo(Constants.TILES_ARCEUUS_LIBRARY_NE[0]).toInt() < 4 }, 50, 80))
@@ -794,6 +794,17 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
+        // travel to soutwest top floor area
+        if (Variables.walkToCenterTopArea) {
+            Constants.PATH_CENTER_TOP_AREA.traverse()
+            if (Constants.SUBAREA_ARCEUUS_LIBRARY_10.contains(Players.local().tile()) ||
+                !Condition.wait({ !Players.local().inMotion() || Players.local()
+                    .distanceTo(Tile(1639, 3813, 1)).toInt() < 4 }, 50, 80))
+                return
+
+            Variables.walkToCenterTopArea = false
+        }
+
         // walk up northeast middle floor stairs
         if (Players.local().floor() == 2) {
             if (Camera.yaw() in 20..340) {
@@ -868,7 +879,6 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        //Tile(1639, 3813, 1)
         // Set all true values to false
         Variables.bookshelvesSearched.forEachIndexed { index, value ->
             if (value)
