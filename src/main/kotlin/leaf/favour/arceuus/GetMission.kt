@@ -5,10 +5,7 @@ import com.jay.favour.Favour
 import com.jay.favour.Variables
 import org.powbot.api.Condition
 import org.powbot.api.Random
-import org.powbot.api.rt4.Chat
-import org.powbot.api.rt4.Npcs
-import org.powbot.api.rt4.Players
-import org.powbot.api.rt4.TilePath
+import org.powbot.api.rt4.*
 import org.powbot.api.script.tree.Leaf
 import org.powbot.dax.api.DaxWalker
 
@@ -69,6 +66,11 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
 
         if (!customer.interact("Help") || !Condition.wait({ Chat.chatting() }, 50, 80)) {
             script.info("Failed to find that we are chatting after talking with the customer.")
+            return
+        }
+
+        if (Chat.getChatMessage().contains("thank", true)) {
+            Variables.customer = customer.name
             return
         }
 
