@@ -10,6 +10,22 @@ import org.powbot.dax.api.DaxWalker
 
 class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
     override fun execute() {
+        if (Camera.yaw() in 20..340) {
+            Camera.angle(0, 5)
+            if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
+                script.info("Failed to angle the camera to standard angle.")
+                return
+            }
+        }
+
+        if (Camera.pitch() < 85) {
+            Camera.pitch(99, 5)
+            if (!Condition.wait({ Camera.pitch() >= 85 }, 50, 30)) {
+                script.info("Failed to pitch the camera towards standard pitch.")
+                return
+            }
+        }
+
         val customer = Npcs.stream().name(Variables.customer).first()
         if (!customer.valid()) {
             if (Players.local().distanceTo(Constants.TILE_ARCEUUS_CENTER) > 8) {

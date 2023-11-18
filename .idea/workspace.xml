@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86124c9e-fdb0-4360-97b7-ae1e961bab42" name="Changes" comment="Start over again if we searched all bookshelves, as a failsafe.">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/FindTexts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/leaf/favour/arceuus/TurnInText.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +196,13 @@
       <option name="presentableId" value="LOCAL−00020" />
       <updated>1700311436885</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL−00021" summary="Start over again if we searched all bookshelves, as a failsafe.">
+      <created>1700311600883</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1700311600883</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

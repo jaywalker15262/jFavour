@@ -42,22 +42,22 @@ object Constants {
         Tile(3054, 3246, 0)))
 
     // Arceuus favour - Finding texts
-    val TEXTS = arrayOf(Pair("Byrnes Coronation Speech", "Speech of King Byrne I, on the occasion of his<br><col=0000ff>coronation."),
-        Pair("Eathram & Rada extract", "An extract from Eathram & Rada, by Anonymous."),
-        Pair("Hosidius Letter", "A letter from Lord Hosidius to the Council of Elders."),
-        Pair("Killing of a King", "Killing of a King, by Griselle."),
-        Pair("Rada's Census", "Census of King Rada III, by Matthias Vorseth."),
-        Pair("Rada's Journey", "The Journey of Rada, by Griselle."),
-        Pair("Ricktor's Diary 7", "Diary of Steklan Ricktor, volume 7."),
+    val TEXTS = arrayOf(Pair("Byrnes coronation speech", "Speech of King Byrne I, on the occasion of his<br><col=0000ff>coronation."),
+        Pair("Eathram & rada extract", "An extract from Eathram & Rada, by Anonymous."),
+        Pair("Hosidius letter", "A letter from Lord Hosidius to the Council of Elders."),
+        Pair("Killing of a king", "Killing of a King, by Griselle."),
+        Pair("Rada's census", "Census of King Rada III, by Matthias Vorseth."),
+        Pair("Rada's journey", "The Journey of Rada, by Griselle."),
+        Pair("Ricktor's diary (7)", "Diary of Steklan Ricktor, volume 7."),
         Pair("Soul Journey", "The Journey of Souls, by Aretha."),
         Pair("The Treachery of Royalty", "The Treachery of Royalty, by Professor Answith."),
-        Pair("The Ideology of Darkness", "The Ideology of Darkness, by Philophaire."),
-        Pair("Transportation Incantations", "Transportation Incantations, by Amon Ducot."),
-        Pair("Transvergence Theory", "The Theory of Transvergence, by Amon Ducot."),
-        Pair("Tristessa's Tragedy", "The Tragedy of Tristessa."),
-        Pair("Twill Accord", "The Royal Accord of Twill."),
-        Pair("Varlamore Envoy", "The Envoy to Varlamore, by Deryk Paulson."),
-        Pair("Wintertodt Parable", "The Parable of the Wintertodt, by Anonymous."))
+        Pair("The ideology of darkness", "The Ideology of Darkness, by Philophaire."),
+        Pair("Transportation incantations", "Transportation Incantations, by Amon Ducot."),
+        Pair("Transvergence theory", "The Theory of Transvergence, by Amon Ducot."),
+        Pair("Tristessa's tragedy", "The Tragedy of Tristessa."),
+        Pair("Twill accord", "The Royal Accord of Twill."),
+        Pair("Varlamore envoy", "The Envoy to Varlamore, by Deryk Paulson."),
+        Pair("Wintertodt parable", "The Parable of the Wintertodt, by Anonymous."))
     val TILE_ARCEUUS_CENTER = Tile(1632, 3808, 0)
     val TILES_ARCEUUS_CENTER_2 = arrayOf(Tile(1639, 3810, 2), Tile(1639, 3811, 2),
         Tile(1639, 3813, 2), Tile(1638, 3814, 2), Tile(1637, 3814, 2),
