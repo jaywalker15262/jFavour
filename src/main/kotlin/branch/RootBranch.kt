@@ -6,7 +6,9 @@ import com.jay.favour.Variables
 import com.jay.favour.leaf.EndScript
 import com.jay.favour.leaf.LogIn
 import com.jay.favour.leaf.favour.lovakengj.WalkToSafety
+import org.powbot.api.Condition
 import org.powbot.api.rt4.Game
+import org.powbot.api.rt4.Inventory
 import org.powbot.api.rt4.Players
 import org.powbot.api.rt4.Varpbits
 import org.powbot.api.script.tree.Branch
@@ -64,8 +66,14 @@ class IsEnding(script: Favour) : Branch<Favour>(script, "Ending script?") {
         else if (Variables.favourType == "Shayzien") {     // Lovakengj
             Variables.favour = Varpbits.value(4894, false)
             Variables.favourPercent = Variables.favour.toFloat() / 10.0f
-            if (Variables.favourPercent.toInt() >= Variables.stopAtPctShayzien)
+            if (Variables.favourPercent.toInt() >= Variables.stopAtPctShayzien) {
                 Variables.favourType = "Arceuus"
+                val medPacks = Inventory.stream().name("Shayzien medpack").toList()
+                if (medPacks.isNotEmpty()) {
+                    Inventory.drop(medPacks)
+                    Condition.wait({ Inventory.stream().name("Shayzien medpack").isEmpty() }, 50, 150)
+                }
+            }
         }
         else if (Variables.favourType == "Arceuus") {   // Arceuus
             Variables.favour = Varpbits.value(4896, false)
