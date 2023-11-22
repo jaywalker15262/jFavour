@@ -16,7 +16,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -104,7 +104,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -184,7 +184,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -261,7 +261,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -347,7 +347,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -425,7 +425,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -500,7 +500,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -586,7 +586,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -672,7 +672,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -747,7 +747,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
@@ -832,7 +832,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
                     return
                 }
 
