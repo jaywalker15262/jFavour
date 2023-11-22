@@ -244,7 +244,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        // travel to soutwest top floor area
+        // travel to southwest top floor area
         if (Variables.walkToSouthWestArea) {
             Constants.PATH_SOUTH_WEST_TOP_AREA.traverse()
             if (!Constants.SUBAREA_ARCEUUS_LIBRARY_6.contains(Players.local().tile()) ||
@@ -483,7 +483,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
-        // travel to soutwest top floor area
+        // travel to southwest top floor area
         if (Variables.walkToNorthEastArea) {
             Constants.PATH_NORTH_EAST_BOTTOM_AREA.traverse()
             if (Players.local().distanceTo(Constants.TILES_ARCEUUS_LIBRARY_NE[0]).toInt() > 8 ||
@@ -730,6 +730,17 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
+        // travel to center top floor area
+        if (Variables.walkToCenterTopArea) {
+            Constants.PATH_CENTER_TOP_AREA.traverse()
+            if (Constants.SUBAREA_ARCEUUS_LIBRARY_10.contains(Players.local().tile()) ||
+                !Condition.wait({ !Players.local().inMotion() || Players.local()
+                    .distanceTo(Tile(1639, 3813, 1)).toInt() < 4 }, 50, 80))
+                return
+
+            Variables.walkToCenterTopArea = false
+        }
+
         // center top floor
         for (bookshelfIndex in Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES.indices) {
             if (!Variables.bookshelvesSearched[298 + bookshelfIndex]) {
@@ -744,8 +755,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                     && Players.local().tile() != Constants.TILES_ARCEUUS_CENTER_2[bookshelfIndex]) {
                     if (!Movement.step(Constants.TILES_ARCEUUS_CENTER_2[bookshelfIndex])
                         || !Condition.wait({ Players.local().inMotion() }, 50, 80)
-                        || !Condition.wait({
-                            !Players.local().inMotion() && Players.local().distanceTo(
+                        || !Condition.wait({ !Players.local().inMotion() && Players.local().distanceTo(
                                 Constants.TILES_ARCEUUS_CENTER_2[bookshelfIndex]) < 3 }, 100, 40)) {
                         script.info("Failed to step towards the bookshelf.")
                         return
@@ -792,17 +802,6 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
 
                 Variables.bookshelvesSearched[298 + bookshelfIndex] = true
             }
-        }
-
-        // travel to soutwest top floor area
-        if (Variables.walkToCenterTopArea) {
-            Constants.PATH_CENTER_TOP_AREA.traverse()
-            if (Constants.SUBAREA_ARCEUUS_LIBRARY_10.contains(Players.local().tile()) ||
-                !Condition.wait({ !Players.local().inMotion() || Players.local()
-                    .distanceTo(Tile(1639, 3813, 1)).toInt() < 4 }, 50, 80))
-                return
-
-            Variables.walkToCenterTopArea = false
         }
 
         // walk up northeast middle floor stairs
