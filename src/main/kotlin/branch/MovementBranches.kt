@@ -33,6 +33,7 @@ class TravelCheck(script: Favour) : Branch<Favour>(script, "Travel to kourend?")
         return Game.floor() == 1 || Players.local().distanceTo(Constants.TILE_PORT_PISCARILIUS).toInt() > 500
                 || Constants.AREA_PLOUGHING.contains(Players.local())
                 || Constants.AREA_CRANES_BIG.contains(Players.local())
+                || Constants.AREA_SHAYZIEN_CAMP.contains(Players.local())
     }
 }
 
@@ -56,9 +57,18 @@ class TravelToCraneAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to
 
 class TravelToSuplhurMineAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to suplhur mine area?") {
     override val successComponent: TreeComponent<Favour> = TravelToSulphurMine(script)
-    override val failedComponent: TreeComponent<Favour> = TravelToShayzienCamp(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToLibraryAreaCheck(script)
 
     override fun validate(): Boolean {
         return Variables.favourType == "Lovakengj"
+    }
+}
+
+class TravelToLibraryAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to arceuus library area?") {
+    override val successComponent: TreeComponent<Favour> = TravelToShayzienCamp(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToLibrary(script)
+
+    override fun validate(): Boolean {
+        return Variables.favourType == "Shayzien"
     }
 }

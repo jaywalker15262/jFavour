@@ -3,6 +3,7 @@ package com.jay.favour
 import com.google.common.eventbus.Subscribe
 import com.jay.favour.branch.IsLoggedIn
 import org.powbot.api.Color
+import org.powbot.api.Condition
 import org.powbot.api.event.MessageEvent
 import org.powbot.api.event.MessageType
 import org.powbot.api.event.PlayerAnimationChangedEvent
@@ -111,6 +112,7 @@ class Favour : TreeScript() {
     }
 
     override fun onStart() {
+        Condition.sleep(1000) // To make sure this 100% always runs after GUI stuff.
         Variables.playerName = Players.local().name
         if (Variables.playerName.isBlank()) {
             severe("Failed to grab our name.")
