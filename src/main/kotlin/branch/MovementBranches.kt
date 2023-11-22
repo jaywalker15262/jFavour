@@ -3,10 +3,7 @@ package com.jay.favour.branch
 import com.jay.favour.Constants
 import com.jay.favour.Favour
 import com.jay.favour.Variables
-import com.jay.favour.leaf.traveling.TravelToCrane
-import com.jay.favour.leaf.traveling.TravelToKourend
-import com.jay.favour.leaf.traveling.TravelToPlough
-import com.jay.favour.leaf.traveling.TravelToSulphurMine
+import com.jay.favour.leaf.traveling.*
 import org.powbot.api.rt4.Game
 import org.powbot.api.rt4.Players
 import org.powbot.api.script.tree.Branch
@@ -50,9 +47,18 @@ class TravelToPloughAreaCheck(script: Favour) : Branch<Favour>(script, "Travel t
 
 class TravelToCraneAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to crane repairing area?") {
     override val successComponent: TreeComponent<Favour> = TravelToCrane(script)
-    override val failedComponent: TreeComponent<Favour> = TravelToSulphurMine(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToSuplhurMineAreaCheck(script)
 
     override fun validate(): Boolean {
         return Variables.favourType == "Piscarilius"
+    }
+}
+
+class TravelToSuplhurMineAreaCheck(script: Favour) : Branch<Favour>(script, "Travel to suplhur mine area?") {
+    override val successComponent: TreeComponent<Favour> = TravelToSulphurMine(script)
+    override val failedComponent: TreeComponent<Favour> = TravelToShayzienCamp(script)
+
+    override fun validate(): Boolean {
+        return Variables.favourType == "Lovakengj"
     }
 }

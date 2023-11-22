@@ -67,31 +67,31 @@ import org.powbot.mobile.service.ScriptUploader
 class Favour : TreeScript() {
     @ValueChanged("stopAtPctHosidius")
     fun stopAtPctHosidiusChanged(newValue: Int) {
-        Variables.stopAtPctHosidius = if (newValue in 1..99)
+        Variables.stopAtPctHosidius = if (newValue in 0..99)
             newValue else 100
     }
 
     @ValueChanged("stopAtPctPiscarilius")
     fun stopAtPctPiscariliusChanged(newValue: Int) {
-        Variables.stopAtPctPiscarilius = if (newValue in 1..99)
+        Variables.stopAtPctPiscarilius = if (newValue in 0..99)
             newValue else 100
     }
 
     @ValueChanged("stopAtPctLovakengj")
     fun stopAtPctLovakengjChanged(newValue: Int) {
-        Variables.stopAtPctLovakengj = if (newValue in 1..99)
+        Variables.stopAtPctLovakengj = if (newValue in 0..99)
             newValue else 100
     }
 
     @ValueChanged("stopAtPctShayzien")
     fun stopAtPctShayzienChanged(newValue: Int) {
-        Variables.stopAtPctShayzien = if (newValue in 1..99)
+        Variables.stopAtPctShayzien = if (newValue in 0..99)
             newValue else 100
     }
 
     @ValueChanged("stopAtPctArceuus")
     fun stopAtPctArceuusChanged(newValue: Int) {
-        Variables.stopAtPctArceuus = if (newValue in 1..99)
+        Variables.stopAtPctArceuus = if (newValue in 0..99)
             newValue else 100
     }
 
@@ -196,5 +196,5 @@ class Favour : TreeScript() {
 
 fun main(args: Array<String>)
 {
-    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:64363", true, false)
+    ScriptUploader().uploadAndStart("jFavour", "", "127.0.0.1:49971", true, false)
 }
