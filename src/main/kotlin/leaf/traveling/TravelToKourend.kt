@@ -10,6 +10,10 @@ import org.powbot.api.script.tree.Leaf
 
 class TravelToKourend(script: Favour) : Leaf<Favour>(script, "Traveling To Kourend") {
     override fun execute() {
+        // Turn on run if we are not running.
+        if (!Movement.running() && Movement.energyLevel() > 30 && Movement.running(true))
+            Condition.wait({ Movement.running() }, 50 ,80)
+
         if (Game.floor() != 1) {
             if (Players.local().distanceTo(Constants.TILE_VEOS).toInt() > 54 &&
                 Players.local().distanceTo(Constants.TILE_DRAYNOR_VILLAGE).toInt() > 6) {
