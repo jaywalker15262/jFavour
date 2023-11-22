@@ -538,7 +538,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                         script.info("Failed to angle the camera towards the bookshelf.")
                         return
                     }
-                } else if (arrayOf(17,26).contains(bookshelfIndex)) {
+                } else if (arrayOf(0,17,26).contains(bookshelfIndex)) {
                     Camera.angle(0, 5)
                     if (!Condition.wait({ Camera.yaw() > 340 || Camera.yaw() < 20 }, 50, 30)) {
                         script.info("Failed to angle the camera towards the bookshelf.")
