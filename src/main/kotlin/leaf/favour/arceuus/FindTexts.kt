@@ -32,7 +32,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                    || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                    || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(12,27).contains(bookshelfIndex)) {
@@ -120,7 +120,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 30)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 30)))
                     return
 
                 if (arrayOf(25).contains(bookshelfIndex)) {
@@ -200,7 +200,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(12,19).contains(bookshelfIndex)) {
@@ -278,7 +278,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 30)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 30)))
                     return
 
                 if (arrayOf(10,35).contains(bookshelfIndex)) {
@@ -364,7 +364,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(0,13,27).contains(bookshelfIndex)) {
@@ -442,7 +442,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(9,18,25).contains(bookshelfIndex)) {
@@ -517,7 +517,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(9).contains(bookshelfIndex)) {
@@ -603,7 +603,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(5).contains(bookshelfIndex)) {
@@ -689,7 +689,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(6,20,27).contains(bookshelfIndex)) {
@@ -763,7 +763,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(12).contains(bookshelfIndex)) {
@@ -837,7 +837,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 }
 
                 if (Chat.chatting() && (!Chat.clickContinue()
-                            || Condition.wait({ !Chat.chatting() }, 50, 80)))
+                            || !Condition.wait({ !Chat.chatting() }, 50, 80)))
                     return
 
                 if (arrayOf(22).contains(bookshelfIndex)) {
@@ -865,8 +865,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                         return
                     }
                 }
-
-                Variables.searchedShelf = false
+                
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
