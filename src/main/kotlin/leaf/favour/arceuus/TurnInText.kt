@@ -58,7 +58,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
             return
         }
 
-        if (Condition.wait({ Inventory.stream()
+        if (!Condition.wait({ Inventory.stream()
             .name(Variables.bookOrScroll).count() < bookOrScrollCount }, 50, 80)) {
             script.info("Failed to find that we turned in the text.")
             return
