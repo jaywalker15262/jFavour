@@ -65,6 +65,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
         }
 
         Variables.bookOrScroll = ""
+        Variables.goToBeginning = true
 
         // Set all true values to false
         Variables.bookshelvesSearched.forEachIndexed { index, value ->
