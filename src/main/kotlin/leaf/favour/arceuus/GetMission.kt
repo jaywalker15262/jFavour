@@ -11,6 +11,12 @@ import org.powbot.dax.api.DaxWalker
 
 class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Request") {
     override fun execute() {
+        if (Game.tab() != Game.Tab.NONE && (!Game.closeOpenTab()
+                    || !Condition.wait({ Game.tab() == Game.Tab.NONE }, 50, 60))) {
+            script.info("Failed to find that our tab was able to be closed.")
+            return
+        }
+
         val customerNames = mutableListOf("Professor Gracklebone", "Sam", "Villia")
         if (Variables.customer.isNotBlank())
             customerNames.remove(Variables.customer)    // we cannot go to the same customer twice in a row.
