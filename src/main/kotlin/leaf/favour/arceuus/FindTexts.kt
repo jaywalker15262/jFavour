@@ -878,6 +878,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
             }
         }
 
+        Variables.goToBeginning = true
         // Set all true values to false
         Variables.bookshelvesSearched.forEachIndexed { index, value ->
             if (value)
