@@ -66,6 +66,7 @@ class TurnInText(script: Favour) : Leaf<Favour>(script, "Turning In Texts") {
 
         Variables.bookOrScroll = ""
         Variables.goToBeginning = true
+        Variables.walkToNorthEastArea = false
 
         // Set all true values to false
         Variables.bookshelvesSearched.forEachIndexed { index, value ->
