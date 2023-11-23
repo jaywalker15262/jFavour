@@ -3,7 +3,6 @@ package com.jay.favour
 import org.powbot.api.Random
 import org.powbot.api.rt4.Npc
 import org.powbot.api.rt4.Skills
-import org.powbot.api.rt4.TilePath
 import org.powbot.api.rt4.walking.model.Skill
 
 object Variables {
@@ -27,7 +26,6 @@ object Variables {
     var walkToCenterTopArea = true
     var bookOrScroll = ""
     var customer = ""
-    var pathToNextLibraryArea = TilePath(arrayOf())
     val bookshelvesSearched = arrayOf(false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
@@ -51,6 +49,8 @@ object Variables {
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
         false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
         false)
+
+
 
     // Hosidius favour - Ploughing
     var ploughXCoord = 0

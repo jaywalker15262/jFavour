@@ -104,7 +104,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. NWM")
                     return
                 }
 
@@ -156,7 +156,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. NWM")
                     return
                 }
 
@@ -184,7 +184,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NW_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. NWT")
                     return
                 }
 
@@ -236,7 +236,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. NWT")
                     return
                 }
 
@@ -261,7 +261,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. SWT")
                     return
                 }
 
@@ -311,7 +311,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. SWT")
                     return
                 }
 
@@ -347,7 +347,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. SWM")
                     return
                 }
 
@@ -397,7 +397,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. SWM")
                     return
                 }
 
@@ -425,7 +425,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_SW_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. SWB")
                     return
                 }
 
@@ -475,7 +475,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. SWB")
                     return
                 }
 
@@ -500,7 +500,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. NEB")
                     return
                 }
 
@@ -550,7 +550,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. NEB")
                     return
                 }
 
@@ -586,7 +586,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. NEM")
                     return
                 }
 
@@ -636,7 +636,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. NEM")
                     return
                 }
 
@@ -672,7 +672,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_LIBRARY_BOOKSHELVES_NE_3[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. NET")
                     return
                 }
 
@@ -722,7 +722,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. NET")
                     return
                 }
 
@@ -747,7 +747,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. CT")
                     return
                 }
 
@@ -796,7 +796,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. CT")
                     return
                 }
 
@@ -832,7 +832,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 val bookshelf = Objects.stream().name("Bookshelf")
                     .at(Constants.TILES_ARCEUUS_CENTER_BOOKSHELVES_2[bookshelfIndex]).first()
                 if (!bookshelf.valid()) {
-                    script.info("Failed to find the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to find the bookshelf nr: $bookshelfIndex. CM")
                     return
                 }
 
@@ -869,7 +869,7 @@ class FindTexts(script: Favour) : Leaf<Favour>(script, "Finding Texts") {
                 bookshelf.bounds(-6, 6, -160, -96, -6, 6)
                 if (!bookshelf.interact("Search")
                     || !Condition.wait({ Variables.searchedShelf || Chat.chatting() }, 50, 80)) {
-                    script.info("Failed to search the bookshelf nr: $bookshelfIndex.")
+                    script.info("Failed to search the bookshelf nr: $bookshelfIndex. CM")
                     return
                 }
 
