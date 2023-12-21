@@ -83,7 +83,7 @@ class GrabPlanksAndNails(script: Favour) : Leaf<Favour>(script, "Restocking On P
                 return
             }
 
-            var planks = Store.items().firstOrNull { it.name() == "<col=ff9040>Plank</col>"
+            val planks = Store.items().firstOrNull { it.name() == "<col=ff9040>Plank</col>"
                     && it.itemStackSize() >= 20 } ?: Component.Nil
             if (!planks.valid()) {
                 if (!Store.setBuyQuantity(50)) {
@@ -96,18 +96,9 @@ class GrabPlanksAndNails(script: Favour) : Leaf<Favour>(script, "Restocking On P
                     return
                 }
 
-                for (n in 1..80) {
-                    Condition.sleep(50)
-                    planks = Store.items().firstOrNull { it.name() == "<col=ff9040>Plank</col>"
-                            && it.itemStackSize() >= 20 } ?: continue
-                    if (planks.valid())
-                        break
-                }
-
-                if (!planks.valid()) {
-                    script.info("Failed to find that we had sold any planks.")
-                    return
-                }
+                Condition.wait({ Store.items().firstOrNull { it.name() == "<col=ff9040>Plank</col>"
+                        && it.itemStackSize() >= 20 } != null }, 50, 80)
+                return
             }
 
             if (!Store.buy(planks.itemId(), 50) || !Condition.wait({ Inventory.stream().name(Variables.plankType)

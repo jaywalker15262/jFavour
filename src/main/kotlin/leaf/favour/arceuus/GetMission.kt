@@ -38,7 +38,7 @@ class GetMission(script: Favour) : Leaf<Favour>(script, "Fetching Next Text Requ
 
         if (customer.distanceTo(Players.local()).toInt() > 8 || !customer.inViewport(true)) {
             DaxWalker.walkTo(customer)
-            if (customer.distanceTo(Players.local()).toInt() > 8 ||
+            if (Players.local().distanceTo(customer).toInt() > 8 ||
                 !Condition.wait({ !Players.local().inMotion()
                         || Players.local().distanceTo(customer).toInt() < 4 }, 50, 80))
                 return
